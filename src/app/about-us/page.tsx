@@ -20,33 +20,33 @@ export default function AboutUs() {
   const differentiators = [
     {
       icon: '🔍',
-      title: 'Real auction expertise',
-      description: 'Direct partnerships with Japan\'s top auction houses'
+      title: 'Sourcing from Japanese Auctions',
+      description: 'Direct access to Japan\'s premier auction houses with expert bidding'
     },
     {
       icon: '⚙️',
-      title: 'Full underbody + rust inspection',
-      description: 'Complete vehicle inspection before purchase'
+      title: 'Inspection & Verification',
+      description: 'Thorough condition checks and documentation verification'
+    },
+    {
+      icon: '🚢',
+      title: 'Shipping & Logistics',
+      description: 'Complete shipping coordination from Japan to Australia'
+    },
+    {
+      icon: '📄',
+      title: 'Customs Clearance',
+      description: 'Full customs brokerage and import documentation handling'
     },
     {
       icon: '💰',
-      title: 'Transparent cost structure',
-      description: 'No hidden fees, clear pricing breakdown'
+      title: 'GST & Compliance',
+      description: 'Australian compliance workshop and GST management'
     },
     {
-      icon: '✓',
-      title: 'Compliance & GST handled',
-      description: 'Complete Australian import regulations management'
-    },
-    {
-      icon: '🎯',
-      title: 'Personalized sourcing',
-      description: 'Tailored vehicle recommendations for your needs'
-    },
-    {
-      icon: '🛠️',
-      title: 'Post-delivery support',
-      description: 'Ongoing maintenance and parts assistance'
+      icon: '🌏',
+      title: 'Worldwide Sourcing',
+      description: 'Can source vehicles from USA, UK, and other global markets'
     }
   ];
 
@@ -142,22 +142,22 @@ export default function AboutUs() {
               <div className="space-y-6">
                 <div className="bg-primary/10 border border-primary/20 rounded-xl p-6">
                   <p className="text-gray-300 leading-relaxed">
-                    "Umze Autohaus began long before it became a business. In 2012, my father started importing cars from Japan out of pure passion — and that passion passed down to me."
+                    "Umze Autohaus is a Melbourne-based car import agency specialising in bringing vehicles from Japan to Australia. We handle the full process — from sourcing to your driveway."
                   </p>
                 </div>
 
                 <div className="space-y-4 text-gray-300 leading-relaxed">
                   <p>
-                    By 2019, I imported my first car, a Toyota Chaser, discovering how clean, reliable, and cost-effective Japanese imports truly were.
+                    We source cars from Japanese auctions, inspect and verify their condition, handle bidding, organise shipping, customs clearance, GST, and compliance.
                   </p>
                   <p>
-                    I started helping friends, family, and eventually their networks — translating auction sheets, researching exporters, checking condition reports, and guiding buyers through the entire process.
+                    If you're interested in a vehicle from other parts of the world, we can help you source that too — whether it's from the USA, UK, or anywhere else.
                   </p>
                   <p>
-                    100+ cars later, that passion became a service built on honesty, real-world experience, and complete transparency.
+                    Our service focuses on three key principles: <strong className="text-white">transparency</strong>, <strong className="text-white">value</strong>, and making the import process <strong className="text-white">simple</strong> for customers.
                   </p>
                   <p className="text-white font-semibold text-lg">
-                    Umze Autohaus exists to help Australians import good cars safely, confidently, and affordably.
+                    The primary goal? To build trust, show that we are a legitimate and professional import service, educate customers about the importing process, and generate leads through quality service.
                   </p>
                 </div>
               </div>

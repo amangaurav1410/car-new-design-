@@ -29,7 +29,7 @@ export default function ContactUs() {
             transition={{ duration: 1, delay: 0.3 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold font-heading mb-8 leading-tight text-white drop-shadow-2xl">
-              Get in Touch With Umze Autohaus
+              Contact Umze Autohaus
             </h1>
           </motion.div>
 
@@ -39,7 +39,7 @@ export default function ContactUs() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            Ready to import your dream JDM car? Let's discuss your options.
+            Ready to import your dream car from Japan? Let's discuss your requirements.
           </motion.p>
         </div>
       </section>
@@ -196,7 +196,9 @@ export default function ContactUs() {
                       </div>
                       <div>
                         <p className="text-white font-semibold">Phone</p>
-                        <p className="text-gray-300">+61 XXX XXX XXX</p>
+                        <a href="tel:+61404312508" className="text-gray-300 hover:text-white transition-colors">
+                          +61 404 312 508
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -208,7 +210,9 @@ export default function ContactUs() {
 
                   <div className="grid grid-cols-2 gap-4">
                     <motion.a
-                      href="#"
+                      href="https://facebook.com/umzeautohaus"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-xl hover:bg-primary/20 transition-all duration-300 group"
                       whileHover={{ scale: 1.05 }}
                     >
@@ -217,7 +221,9 @@ export default function ContactUs() {
                     </motion.a>
 
                     <motion.a
-                      href="#"
+                      href="https://instagram.com/umzeautohaus"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-xl hover:bg-secondary/20 transition-all duration-300 group"
                       whileHover={{ scale: 1.05 }}
                     >
@@ -226,7 +232,9 @@ export default function ContactUs() {
                     </motion.a>
 
                     <motion.a
-                      href="#"
+                      href="https://tiktok.com/@umzeautohaus"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-xl hover:bg-primary/20 transition-all duration-300 group"
                       whileHover={{ scale: 1.05 }}
                     >
@@ -235,12 +243,12 @@ export default function ContactUs() {
                     </motion.a>
 
                     <motion.a
-                      href="#"
+                      href="mailto:info@umzeautohaus.com"
                       className="flex items-center gap-3 p-4 bg-gray-700/50 rounded-xl hover:bg-secondary/20 transition-all duration-300 group"
                       whileHover={{ scale: 1.05 }}
                     >
-                      <span className="text-2xl">💼</span>
-                      <span className="text-white font-semibold group-hover:text-secondary">LinkedIn</span>
+                      <span className="text-2xl">✉️</span>
+                      <span className="text-white font-semibold group-hover:text-secondary">Email</span>
                     </motion.a>
                   </div>
                 </div>
@@ -282,7 +290,7 @@ export default function ContactUs() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Fill out our contact form or call us directly to begin your JDM import journey.
+            Fill out our contact form or call us directly to begin your car import journey.
           </motion.p>
           <motion.div
             className="flex flex-col sm:flex-row gap-6 justify-center"
@@ -300,12 +308,12 @@ export default function ContactUs() {
               <span className="relative z-10">Start Import Process</span>
             </motion.a>
             <motion.a
-              href="tel:+61XXXXXXXXX"
+              href="tel:+61404312508"
               className="btn-mirror border-2 border-white text-white px-12 py-6 rounded-2xl font-bold text-xl hover:bg-white hover:text-primary transition-all duration-300 shadow-2xl hover:shadow-white/20 inline-block"
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
-              Call Now: +61 XXX XXX XXX
+              Call Now: +61 404 312 508
             </motion.a>
           </motion.div>
         </div>

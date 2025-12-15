@@ -1,11 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
-  const [expandedService, setExpandedService] = useState<number | null>(null);
-
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -20,70 +18,19 @@ export default function Home() {
     }
   };
 
-  const services = [
-    {
-      icon: '🔍',
-      title: 'Direct Auction Access',
-      description: 'Real-time bidding on Japan\'s top auction platforms',
-      details: 'Access USS, TAA, CAA, and other premier auction houses with live translation support and expert guidance.'
-    },
-    {
-      icon: '📋',
-      title: 'Professional Condition Translation',
-      description: 'Complete auction sheet analysis in English',
-      details: 'We translate and explain every detail from auction sheets, including grade marks, condition notes, and modification history.'
-    },
-    {
-      icon: '⚙️',
-      title: 'Engine & Undercarriage Checks',
-      description: 'Third-party verification and inspection',
-      details: 'Professional mechanics inspect critical components before purchase, with detailed photo reports sent directly to you.'
-    },
-    {
-      icon: '🚢',
-      title: 'Shipping Coordination',
-      description: 'Secure transport from Japan to Melbourne',
-      details: 'We handle containerization, marine insurance, and tracking from port to port with regular updates.'
-    },
-    {
-      icon: '📄',
-      title: 'Complete Customs Processing',
-      description: 'Expert handling of all import paperwork',
-      details: 'Full customs brokerage including duty calculation, quarantine clearance, and all required documentation.'
-    },
-    {
-      icon: '💰',
-      title: 'GST & Duty Calculation',
-      description: 'Accurate cost estimates upfront',
-      details: 'Transparent breakdown of all taxes, duties, and fees with no hidden costs or surprises.'
-    },
-    {
-      icon: '✓',
-      title: 'Australian Compliance',
-      description: 'Full RAV approval and compliance workshop',
-      details: 'We manage SEVS approval, compliance modifications, and registration requirements for your state.'
-    },
-    {
-      icon: '🚗',
-      title: 'Melbourne Delivery',
-      description: 'Professional handover at your location',
-      details: 'White-glove delivery service with full vehicle walkthrough and ongoing maintenance support.'
-    }
-  ];
-
   return (
     <div className="bg-carbon">
-      {/* Hero Section */}
+      {/* 1️⃣ HERO SECTION */}
       <section className="relative text-white min-h-screen flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
             src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-            alt="Blue BMW M3"
+            alt="Japanese Import Vehicle"
             className="w-full h-full object-cover animate-ken-burns"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/60"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-black/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0F1614] via-transparent to-transparent"></div>
         </div>
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full z-10">
@@ -92,40 +39,24 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold font-heading mb-8 leading-tight text-white drop-shadow-2xl">
-              Import Your Dream<br />
-              <span className="text-white drop-shadow-2xl">JDM Car</span>
+            <h1 className="text-5xl md:text-7xl font-bold font-heading mb-8 leading-tight text-[#EAE2D6] drop-shadow-2xl">
+              UMZE AUTOHAUS
             </h1>
+            <p className="text-2xl md:text-3xl mb-6 text-[#EAE2D6] font-semibold drop-shadow-lg">
+              Your Importing Experts — Transparent, Tailored, Trusted.
+            </p>
           </motion.div>
 
           <motion.p
-            className="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-white leading-relaxed drop-shadow-lg"
+            className="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-[#BDB6AD] leading-relaxed drop-shadow-lg"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            Melbourne's trusted automotive import agency specializing in JDM vehicles from Japan, US, and UK.
+            Melbourne-based specialists helping people import vehicles from Japan with clarity, guidance, and full process support.
           </motion.p>
 
-          {/* Trust Badges */}
-          <motion.div
-            className="flex flex-wrap justify-center gap-6 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8 }}
-          >
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
-              <span className="text-white font-semibold">Licensed Import Agent</span>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
-              <span className="text-white font-semibold">100+ Cars Verified</span>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3">
-              <span className="text-white font-semibold">15+ Years Experience</span>
-            </div>
-          </motion.div>
-
-          {/* Primary CTAs with Mirror Effects */}
+          {/* Primary CTAs */}
           <motion.div
             className="flex flex-col sm:flex-row gap-6 justify-center"
             initial={{ opacity: 0, y: 20 }}
@@ -134,1117 +65,810 @@ export default function Home() {
           >
             {/* Primary CTA */}
             <motion.a
-              href="/import-now"
-              className="btn-mirror bg-gradient-to-r from-accent to-accent/80 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-accent/50 border border-accent/20 hover:border-accent/40 transition-all duration-300 relative group"
+              href="/contact-us"
+              className="bg-[#25614F] text-[#EAE2D6] px-10 py-5 rounded-lg font-bold text-lg hover:bg-[#1e4f3f] transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="relative z-10">Get Free Quote</span>
+              Get in touch
             </motion.a>
             
             {/* Secondary CTA */}
             <motion.a
-              href="/vehicles-for-import"
-              className="btn-mirror border-2 border-white/80 text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-white hover:text-gray-900 transition-all duration-300 shadow-2xl hover:shadow-white/20 backdrop-blur-sm bg-white/5"
+              href="/import-now"
+              className="border-2 border-[#BDB6AD] text-[#EAE2D6] px-10 py-5 rounded-lg font-bold text-lg hover:bg-[#BDB6AD]/10 transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              View Auctions
+              Use the calculator
             </motion.a>
           </motion.div>
         </div>
       </section>
 
-      {/* Parallax: Transparent Pricing Section */}
-      <section className="relative py-32 overflow-hidden">
-        {/* Parallax Background */}
-        <div className="absolute inset-0 parallax-section" style={{
-          backgroundImage: 'url(https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80)'
-        }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/85 to-black/90"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-          <motion.h2
-            className="text-5xl font-bold font-heading text-center mb-16 text-white"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Transparent Pricing
-          </motion.h2>
-
-          <motion.p
-            className="text-xl text-center text-gray-300 mb-16 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            No hidden fees, clear cost breakdowns
-          </motion.p>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <motion.div
-              className="flex flex-col items-center p-10 rounded-2xl bg-black/40 backdrop-blur-md border border-primary/30 hover:border-primary/60 transition-all duration-500 group"
-              variants={fadeInUp}
-              whileHover={{ scale: 1.05, y: -10 }}
-            >
-              <motion.div
-                className="w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mb-6 shadow-2xl"
-                whileHover={{ rotate: 360, scale: 1.2 }}
-                transition={{ duration: 0.8 }}
-              >
-                <span className="text-white text-3xl">✓</span>
-              </motion.div>
-              <h3 className="text-white font-bold text-2xl mb-4 group-hover:text-primary transition-colors">Transparent Pricing</h3>
-              <p className="text-gray-300 text-center leading-relaxed">No hidden fees, clear cost breakdowns</p>
-            </motion.div>
-            
-            <motion.div
-              className="flex flex-col items-center p-10 rounded-2xl bg-black/40 backdrop-blur-md border border-secondary/30 hover:border-secondary/60 transition-all duration-500 group"
-              variants={fadeInUp}
-              whileHover={{ scale: 1.05, y: -10 }}
-            >
-              <motion.div
-                className="w-20 h-20 bg-gradient-to-br from-secondary to-secondary/70 rounded-full flex items-center justify-center mb-6 shadow-2xl"
-                whileHover={{ rotate: 360, scale: 1.2 }}
-                transition={{ duration: 0.8 }}
-              >
-                <span className="text-white text-3xl font-bold">1:1</span>
-              </motion.div>
-              <h3 className="text-white font-bold text-2xl mb-4 group-hover:text-secondary transition-colors">1-on-1 Import Guidance</h3>
-              <p className="text-gray-300 text-center leading-relaxed">Personalized consultations</p>
-            </motion.div>
-            
-            <motion.div
-              className="flex flex-col items-center p-10 rounded-2xl bg-black/40 backdrop-blur-md border border-primary/30 hover:border-primary/60 transition-all duration-500 group"
-              variants={fadeInUp}
-              whileHover={{ scale: 1.05, y: -10 }}
-            >
-              <motion.div
-                className="w-20 h-20 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mb-6 shadow-2xl"
-                whileHover={{ rotate: 360, scale: 1.2 }}
-                transition={{ duration: 0.8 }}
-              >
-                <span className="text-white text-3xl">⚡</span>
-              </motion.div>
-              <h3 className="text-white font-bold text-2xl mb-4 group-hover:text-primary transition-colors">Professional Condition Checks</h3>
-              <p className="text-gray-300 text-center leading-relaxed">Expert vehicle inspection</p>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Direct Access to Japan's Top Auctions - Hero Style */}
-      <section className="relative py-24 overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0">
-          <img
-            src="https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=1920&q=80"
-            alt="Japanese Auction House"
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-black to-gray-900"></div>
+      {/* 2️⃣ INTRODUCTION — WHO WE ARE */}
+      <section className="relative py-32 overflow-hidden bg-carbon">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(234,226,214,0.15) 1px, transparent 0)',
+            backgroundSize: '50px 50px'
+          }}></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-5xl font-bold font-heading mb-8 text-white">
-                Direct Access to Japan's Top Auctions
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                We have direct partnerships with Japan's leading auction houses, giving you access to the finest JDM vehicles
-              </p>
-
-              <div className="space-y-4 mb-10">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                    <span className="text-primary text-xl">✓</span>
-                  </div>
-                  <span className="text-white text-lg">Real-time auction bidding</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                    <span className="text-primary text-xl">✓</span>
-                  </div>
-                  <span className="text-white text-lg">Professional translation service</span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                    <span className="text-primary text-xl">✓</span>
-                  </div>
-                  <span className="text-white text-lg">Expert bidding strategy</span>
-                </div>
-              </div>
-
-              <motion.a
-                href="/vehicles-for-import"
-                className="btn-mirror bg-gradient-to-r from-primary to-secondary text-white px-10 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-primary/60 border border-primary/20 hover:border-primary/40 transition-all duration-300 inline-block"
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Browse Auctions →
-              </motion.a>
-            </motion.div>
-
-            {/* Auction Logos Grid */}
-            <motion.div
-              className="grid grid-cols-3 gap-6"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              {['USS', 'TAA', 'CAA', 'Aucnet', 'JU', 'IAA'].map((auction, index) => (
-                <motion.div
-                  key={auction}
-                  className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border border-gray-700 hover:border-primary/50 transition-all duration-300 text-center group"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                >
-                  <div className="text-3xl font-bold text-gray-400 group-hover:text-primary transition-colors">
-                    {auction}
-                  </div>
-                  <p className="text-xs text-gray-500 mt-2">Auctions</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* We Import Premium Brands - Masonry Grid */}
-      <section className="py-24 bg-carbon">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-5xl font-bold font-heading text-center mb-16 text-white"
+          {/* Section Header */}
+          <motion.div
+            className="text-center mb-20"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            We Import Premium Brands
-          </motion.h2>
+            <motion.div
+              className="inline-flex items-center gap-3 bg-[#25614F]/20 rounded-full px-6 py-3 mb-6 border border-[#25614F]/30"
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="w-2 h-2 bg-[#25614F] rounded-full animate-pulse"></div>
+              <span className="text-[#25614F] font-semibold text-sm uppercase tracking-wider">Who We Are</span>
+            </motion.div>
 
-          {/* Brand Grid with Images */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-            {[
-              { name: 'Toyota', img: 'https://images.pexels.com/photos/9735309/pexels-photo-9735309.jpeg?auto=compress&cs=tinysrgb&w=600&q=80' },
-              { name: 'Nissan', img: 'https://images.pexels.com/photos/627678/pexels-photo-627678.jpeg?auto=compress&cs=tinysrgb&w=600&q=80' },
-              { name: 'Mitsubishi', img: 'https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=600&q=80' },
-              { name: 'Subaru', img: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=600&q=80' },
-              { name: 'Honda', img: 'https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=600&q=80' },
-              { name: 'Mazda', img: 'https://images.pexels.com/photos/707046/pexels-photo-707046.jpeg?auto=compress&cs=tinysrgb&w=600&q=80' }
-            ].map((brand, index) => (
-              <motion.div
-                key={brand.name}
-                className="relative group cursor-pointer overflow-hidden rounded-xl"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <div className="relative h-32 overflow-hidden">
+            <h2 className="text-5xl md:text-6xl font-bold font-heading mb-6 text-[#EAE2D6]">
+              About Umze Autohaus
+            </h2>
+            <div className="w-24 h-1 bg-[#25614F] mx-auto rounded-full"></div>
+          </motion.div>
+
+          {/* Main Content Grid */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Left Column - Image with Overlay */}
+            <motion.div
+              className="relative group"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="relative overflow-hidden rounded-3xl">
+                {/* Image Container */}
+                <div className="relative overflow-hidden rounded-3xl border-2 border-[#25614F]/30 group-hover:border-[#25614F]/50 transition-all duration-500">
                   <img
-                    src={brand.img}
-                    alt={brand.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="Japanese Car Import"
+                    className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-3xl font-bold text-white drop-shadow-2xl group-hover:text-primary transition-colors">
-                      {brand.name}
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Vehicles */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-5xl font-bold font-heading text-center mb-16 text-white"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Featured Vehicles
-          </motion.h2>
-          
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            {/* Vehicle 1 */}
-            <motion.div
-              className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden shadow-2xl hover:shadow-primary/20 border border-gray-700 hover:border-primary/50 transition-all duration-500"
-              variants={fadeInUp}
-              whileHover={{ y: -10 }}
-            >
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src="https://images.pexels.com/photos/9735309/pexels-photo-9735309.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                  alt="White Toyota Supra"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
-                  Grade A
-                </div>
-                <div className="absolute bottom-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
-                  From Japan
-                </div>
-              </div>
-              <div className="p-8">
-                <div className="flex items-center gap-4 text-gray-400 mb-4">
-                  <span className="flex items-center gap-1">
-                    <span className="text-primary">📅</span> 2005
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <span className="text-secondary">🛣️</span> 120k km
-                  </span>
-                </div>
-                <p className="text-3xl font-bold text-primary mb-6">AUD $25,000</p>
-                <motion.a
-                  href="/vehicles-for-import/1"
-                  className="btn-mirror inline-flex items-center text-secondary hover:text-primary font-bold text-lg transition-all duration-300 bg-secondary/10 hover:bg-primary/10 px-4 py-2 rounded-lg"
-                  whileHover={{ x: 5 }}
-                >
-                  View Details
-                  <span className="ml-2 group-hover:translate-x-1 transition-transform text-xl">→</span>
-                </motion.a>
-              </div>
-            </motion.div>
-
-            {/* Vehicle 2 */}
-            <motion.div
-              className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden shadow-2xl hover:shadow-secondary/20 border border-gray-700 hover:border-secondary/50 transition-all duration-500"
-              variants={fadeInUp}
-              whileHover={{ y: -10 }}
-            >
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src="https://images.pexels.com/photos/627678/pexels-photo-627678.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                  alt="Orange Nissan GTR"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
-                  Grade A
-                </div>
-                <div className="absolute bottom-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
-                  From Japan
-                </div>
-              </div>
-              <div className="p-8">
-                <div className="flex items-center gap-4 text-gray-400 mb-4">
-                  <span className="flex items-center gap-1">
-                    <span className="text-primary">📅</span> 2012
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <span className="text-secondary">🛣️</span> 85k km
-                  </span>
-                </div>
-                <p className="text-3xl font-bold text-secondary mb-6">AUD $85,000</p>
-                <motion.a
-                  href="/vehicles-for-import/2"
-                  className="btn-mirror inline-flex items-center text-secondary hover:text-primary font-bold text-lg transition-all duration-300 bg-secondary/10 hover:bg-primary/10 px-4 py-2 rounded-lg"
-                  whileHover={{ x: 5 }}
-                >
-                  View Details
-                  <span className="ml-2 group-hover:translate-x-1 transition-transform text-xl">→</span>
-                </motion.a>
-              </div>
-            </motion.div>
-
-            {/* Vehicle 3 */}
-            <motion.div
-              className="group bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl overflow-hidden shadow-2xl hover:shadow-primary/20 border border-gray-700 hover:border-primary/50 transition-all duration-500"
-              variants={fadeInUp}
-              whileHover={{ y: -10 }}
-            >
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src="https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                  alt="Black Porsche 911"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
-                  Grade B
-                </div>
-                <div className="absolute bottom-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
-                  From Japan
-                </div>
-              </div>
-              <div className="p-8">
-                <div className="flex items-center gap-4 text-gray-400 mb-4">
-                  <span className="flex items-center gap-1">
-                    <span className="text-primary">📅</span> 1997
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <span className="text-secondary">🛣️</span> 95k km
-                  </span>
-                </div>
-                <p className="text-3xl font-bold text-primary mb-6">AUD $45,000</p>
-                <motion.a
-                  href="/vehicles-for-import/3"
-                  className="btn-mirror inline-flex items-center text-secondary hover:text-primary font-bold text-lg transition-all duration-300 bg-secondary/10 hover:bg-primary/10 px-4 py-2 rounded-lg"
-                  whileHover={{ x: 5 }}
-                >
-                  View Details
-                  <span className="ml-2 group-hover:translate-x-1 transition-transform text-xl">→</span>
-                </motion.a>
-              </div>
-            </motion.div>
-          </motion.div>
-          
-          <motion.div
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <motion.a
-              href="/vehicles-for-import"
-              className="btn-mirror bg-gradient-to-r from-primary via-primary/90 to-secondary text-white px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-primary/60 border border-primary/20 hover:border-primary/40 transition-all duration-300 inline-block relative group"
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10">View All Vehicles</span>
-            </motion.a>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Import Steps */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-5xl font-bold font-heading text-center mb-16 text-white"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            How It Works
-          </motion.h2>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            {/* Step 1 */}
-            <motion.div
-              className="text-center group relative flip-on-hover"
-              variants={fadeInUp}
-            >
-              <div className="relative p-8 rounded-3xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-primary/20 hover:border-primary/40 shadow-2xl transition-all duration-500">
-                <motion.div
-                  className="relative w-20 h-20 bg-gradient-to-br from-primary via-primary/90 to-primary/70 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-2xl"
-                  whileHover={{ scale: 1.1, rotate: 360 }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <span className="text-white text-2xl">🔍</span>
-                </motion.div>
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
-                  1
-                </div>
-                <h3 className="text-2xl font-bold font-heading mb-4 text-white group-hover:text-primary transition-colors duration-300">Choose</h3>
-                <p className="text-gray-300 text-base leading-relaxed">Browse our curated selection of premium JDM vehicles</p>
-              </div>
-            </motion.div>
-
-            {/* Step 2 */}
-            <motion.div
-              className="text-center group relative flip-on-hover"
-              variants={fadeInUp}
-            >
-              <div className="relative p-8 rounded-3xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-secondary/20 hover:border-secondary/40 shadow-2xl transition-all duration-500">
-                <motion.div
-                  className="relative w-20 h-20 bg-gradient-to-br from-secondary via-secondary/90 to-secondary/70 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-2xl"
-                  whileHover={{ scale: 1.1, rotate: 360 }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <span className="text-white text-2xl">⚡</span>
-                </motion.div>
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
-                  2
-                </div>
-                <h3 className="text-2xl font-bold font-heading mb-4 text-white group-hover:text-secondary transition-colors duration-300">Inspect</h3>
-                <p className="text-gray-300 text-base leading-relaxed">Professional condition checks and documentation</p>
-              </div>
-            </motion.div>
-
-            {/* Step 3 */}
-            <motion.div
-              className="text-center group relative flip-on-hover"
-              variants={fadeInUp}
-            >
-              <div className="relative p-8 rounded-3xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-primary/20 hover:border-primary/40 shadow-2xl transition-all duration-500">
-                <motion.div
-                  className="relative w-20 h-20 bg-gradient-to-br from-primary via-primary/90 to-primary/70 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-2xl"
-                  whileHover={{ scale: 1.1, rotate: 360 }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <span className="text-white text-2xl">🚢</span>
-                </motion.div>
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
-                  3
-                </div>
-                <h3 className="text-2xl font-bold font-heading mb-4 text-white group-hover:text-primary transition-colors duration-300">Import</h3>
-                <p className="text-gray-300 text-base leading-relaxed">Secure shipping and customs clearance</p>
-              </div>
-            </motion.div>
-
-            {/* Step 4 */}
-            <motion.div
-              className="text-center group relative flip-on-hover"
-              variants={fadeInUp}
-            >
-              <div className="relative p-8 rounded-3xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-secondary/20 hover:border-secondary/40 shadow-2xl transition-all duration-500">
-                <motion.div
-                  className="relative w-20 h-20 bg-gradient-to-br from-secondary via-secondary/90 to-secondary/70 rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-2xl"
-                  whileHover={{ scale: 1.1, rotate: 360 }}
-                  transition={{ duration: 0.8 }}
-                >
-                  <span className="text-white text-2xl">🏁</span>
-                </motion.div>
-                <div className="absolute -top-4 -right-4 w-8 h-8 bg-secondary text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
-                  4
-                </div>
-                <h3 className="text-2xl font-bold font-heading mb-4 text-white group-hover:text-secondary transition-colors duration-300">Deliver</h3>
-                <p className="text-gray-300 text-base leading-relaxed">Melbourne-based handover with support</p>
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Cost Calculator */}
-      <section className="py-20 bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 border-y border-primary/20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-12 shadow-2xl border border-primary/30"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="text-left">
-                <h2 className="text-4xl font-bold font-heading mb-6 text-white">
-                  Import Cost Calculator
-                </h2>
-                <p className="text-gray-300 mb-8 text-lg">
-                  Calculate shipping, taxes, GST, compliance costs and more
-                </p>
-                <motion.a
-                  href="/import-now"
-                  className="btn-mirror bg-gradient-to-r from-primary via-primary/90 to-secondary text-white px-12 py-5 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-primary/60 border border-primary/20 hover:border-primary/40 transition-all duration-300 inline-block"
-                  whileHover={{ scale: 1.05, y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span className="relative z-10">Calculate Import Cost →</span>
-                </motion.a>
-              </div>
-              
-              {/* Cost Breakdown Preview */}
-              <div className="bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-xl p-8 border border-gray-600">
-                <h3 className="text-xl font-bold text-white mb-6">Cost Breakdown Preview</h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between text-gray-300">
-                    <span>Vehicle Price (ex-Auction)</span>
-                    <span>AUD $25,000</span>
-                  </div>
-                  <div className="flex justify-between text-gray-300">
-                    <span>Shipping & Insurance</span>
-                    <span>AUD $2,800</span>
-                  </div>
-                  <div className="flex justify-between text-gray-300">
-                    <span>Import Duty (5%)</span>
-                    <span>AUD $1,250</span>
-                  </div>
-                  <div className="flex justify-between text-gray-300">
-                    <span>GST (10%)</span>
-                    <span>AUD $2,830</span>
-                  </div>
-                  <div className="border-t border-gray-600 pt-4 flex justify-between text-white font-bold">
-                    <span>Total Estimated Cost</span>
-                    <span>AUD $31,880</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Why Import With Us */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-5xl font-bold font-heading text-center mb-16 text-white"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Why Import With Us
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <motion.div
-              className="text-center p-8 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 hover:border-primary/50 transition-all duration-300 group flip-on-hover"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              whileHover={{ scale: 1.05, y: -5 }}
-            >
-              <motion.div
-                className="text-6xl font-bold text-primary mb-4"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                100+
-              </motion.div>
-              <h4 className="text-white font-bold text-xl mb-2">Cars Inspected & Sourced</h4>
-              <p className="text-gray-300 text-sm">Premium JDM vehicles carefully selected</p>
-            </motion.div>
-
-            <motion.div
-              className="text-center p-8 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/10 border border-secondary/30 hover:border-secondary/50 transition-all duration-300 group flip-on-hover"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ scale: 1.05, y: -5 }}
-            >
-              <motion.div
-                className="text-6xl font-bold text-secondary mb-4"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                2012
-              </motion.div>
-              <h4 className="text-white font-bold text-xl mb-2">Growing Import Experience</h4>
-              <p className="text-gray-300 text-sm">Established automotive expertise</p>
-            </motion.div>
-
-            <motion.div
-              className="text-center p-8 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30 hover:border-primary/50 transition-all duration-300 group flip-on-hover"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              whileHover={{ scale: 1.05, y: -5 }}
-            >
-              <motion.div
-                className="text-6xl font-bold text-primary mb-4"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-              >
-                7
-              </motion.div>
-              <h4 className="text-white font-bold text-xl mb-2">Days Support</h4>
-              <p className="text-gray-300 text-sm">Available throughout the week</p>
-            </motion.div>
-
-            <motion.div
-              className="text-center p-8 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/10 border border-secondary/30 hover:border-secondary/50 transition-all duration-300 group flip-on-hover"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              whileHover={{ scale: 1.05, y: -5 }}
-            >
-              <motion.div
-                className="text-6xl font-bold text-secondary mb-4"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-              >
-                ✓
-              </motion.div>
-              <h4 className="text-white font-bold text-xl mb-2">Compliance & Delivery</h4>
-              <p className="text-gray-300 text-sm">Full service from auction to driveway</p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* What You Get With Our Service - Modern UX */}
-      <section className="py-24 bg-carbon">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-5xl font-bold font-heading text-center mb-16 text-white"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            What You Get With Our Service
-          </motion.h2>
-
-          <motion.p
-            className="text-xl text-center text-gray-300 mb-16 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Included in Every Import
-          </motion.p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                className="relative group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <div
-                  className={`bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 border cursor-pointer transition-all duration-300 ${
-                    expandedService === index
-                      ? 'border-primary shadow-2xl shadow-primary/20'
-                      : 'border-gray-700 hover:border-primary/50'
-                  }`}
-                  onClick={() => setExpandedService(expandedService === index ? null : index)}
-                >
-                  <motion.div
-                    className="w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center mb-4 shadow-lg"
-                    whileHover={{ scale: 1.1, rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <span className="text-2xl">{service.icon}</span>
-                  </motion.div>
                   
-                  <h3 className="text-white font-bold text-lg mb-2 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
+                  {/* Overlay Gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   
-                  <p className="text-gray-400 text-sm mb-3">{service.description}</p>
-                  
-                  {/* Expandable Details */}
-                  <motion.div
-                    initial={false}
-                    animate={{ height: expandedService === index ? 'auto' : 0, opacity: expandedService === index ? 1 : 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="pt-3 border-t border-gray-700 mt-3">
-                      <p className="text-gray-300 text-sm leading-relaxed">{service.details}</p>
-                    </div>
-                  </motion.div>
-                  
-                  <div className="mt-4 flex items-center text-primary text-sm font-semibold">
-                    <span>{expandedService === index ? 'Show Less' : 'Learn More'}</span>
-                    <motion.span
-                      className="ml-2"
-                      animate={{ rotate: expandedService === index ? 180 : 0 }}
-                      transition={{ duration: 0.3 }}
+                  {/* Floating Stats */}
+                  <div className="absolute bottom-8 left-8 right-8 grid grid-cols-2 gap-4">
+                    <motion.div
+                      className="bg-[#0F1614]/80 backdrop-blur-md rounded-2xl p-4 border border-[#25614F]/20"
+                      whileHover={{ y: -5 }}
                     >
-                      ↓
-                    </motion.span>
+                      <div className="text-3xl font-bold text-[#EAE2D6] mb-1">100%</div>
+                      <div className="text-sm text-[#BDB6AD]">Transparency</div>
+                    </motion.div>
+                    <motion.div
+                      className="bg-[#0F1614]/80 backdrop-blur-md rounded-2xl p-4 border border-[#25614F]/20"
+                      whileHover={{ y: -5 }}
+                    >
+                      <div className="text-3xl font-bold text-[#EAE2D6] mb-1">Expert</div>
+                      <div className="text-sm text-[#BDB6AD]">Guidance</div>
+                    </motion.div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+              </div>
+            </motion.div>
 
-      {/* We Also Import From USA & UK */}
-      <section className="py-20 bg-gradient-to-r from-gray-900 via-black to-gray-900">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Right Column - Content Cards */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              className="space-y-6"
+              initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-bold font-heading mb-6 text-white">
-                We Also Import From USA & UK
-              </h2>
-              <p className="text-lg text-gray-300 mb-8">
-                Beyond Japanese imports, we source premium vehicles from United States and United Kingdom markets
-              </p>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-3">
-                  <span className="text-secondary text-xl">🇺🇸</span>
-                  <span className="text-white">American Muscle & Exotics</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-primary text-xl">🇬🇧</span>
-                  <span className="text-white">British Classics & Performance</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="text-secondary text-xl">🇯🇵</span>
-                  <span className="text-white">Japanese Domestic Market</span>
-                </div>
-              </div>
-              <motion.a
-                href="/contact-us"
-                className="btn-mirror inline-flex items-center bg-secondary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-opacity-90 transition-all duration-300 border border-secondary/20 hover:border-secondary/40 shadow-lg"
-                whileHover={{ scale: 1.05, y: -3 }}
+              {/* Card 1 - Our Story */}
+              <motion.div
+                className="group bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/20 hover:border-[#25614F]/50 transition-all duration-500"
+                whileHover={{ y: -5 }}
               >
-                Learn More About Global Imports →
-              </motion.a>
-            </motion.div>
-
-            <motion.div
-              className="relative"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="grid grid-cols-2 gap-4">
-                <img
-                  src="https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg?auto=compress&cs=tinysrgb&w=600&q=80"
-                  alt="American Muscle Car"
-                  className="w-full h-48 object-cover rounded-xl shadow-lg"
-                />
-                <img
-                  src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=600&q=80"
-                  alt="British Sports Car"
-                  className="w-full h-48 object-cover rounded-xl shadow-lg"
-                />
-                <img
-                  src="https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=600&q=80"
-                  alt="JDM Car Interior"
-                  className="w-full h-48 object-cover rounded-xl shadow-lg col-span-2"
-                />
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Auction Sheet Sample */}
-      <section className="py-20 bg-carbon">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-4xl font-bold font-heading text-center mb-12 text-white"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Sample Auction Sheet
-          </motion.h2>
-
-          <motion.div
-            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-12 border border-gray-700 shadow-2xl"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-xl font-bold text-white mb-6">Vehicle Details</h3>
-                <div className="space-y-3 text-gray-300">
-                  <div className="flex justify-between">
-                    <span>Auction Grade:</span>
-                    <span className="text-primary font-bold">A (Excellent)</span>
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-14 h-14 bg-[#25614F] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-7 h-7 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
                   </div>
-                  <div className="flex justify-between">
-                    <span>Odometer:</span>
-                    <span className="font-bold">45,000 km</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Engine:</span>
-                    <span className="font-bold">2.0L Turbo</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Transmission:</span>
-                    <span className="font-bold">6-Speed Manual</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Drive Type:</span>
-                    <span className="font-bold">All-Wheel Drive</span>
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#EAE2D6] mb-3 group-hover:text-[#A88F5C] transition-colors duration-300">
+                      Our Story
+                    </h3>
                   </div>
                 </div>
+                <p className="text-[#BDB6AD] leading-relaxed">
+                  Umze Autohaus specialises in importing vehicles from Japan. What began as a personal passion has grown into a service built on real experience, careful research, and honest guidance.
+                </p>
+              </motion.div>
 
-                <h4 className="text-lg font-bold text-white mt-8 mb-4">Condition Report</h4>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                  <div className="flex justify-between">
-                    <span>Exterior:</span>
-                    <span className="text-primary">A</span>
+              {/* Card 2 - Our Service */}
+              <motion.div
+                className="group bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/20 hover:border-[#25614F]/50 transition-all duration-500"
+                whileHover={{ y: -5 }}
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-14 h-14 bg-[#25614F] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-7 h-7 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
                   </div>
-                  <div className="flex justify-between">
-                    <span>Interior:</span>
-                    <span className="text-secondary">B</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Engine:</span>
-                    <span className="text-primary">A</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Transmission:</span>
-                    <span className="text-primary">A</span>
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#EAE2D6] mb-3 group-hover:text-[#A88F5C] transition-colors duration-300">
+                      Full Support
+                    </h3>
                   </div>
                 </div>
-              </div>
+                <p className="text-[#BDB6AD] leading-relaxed">
+                  We support clients through the full import process — from sourcing and inspections through to shipping, compliance coordination, and delivery — so each step is understood and managed properly.
+                </p>
+              </motion.div>
 
-              <div>
-                <div className="bg-gray-700/50 rounded-xl p-6 border border-gray-600">
-                  <h4 className="text-lg font-bold text-white mb-4">Additional Notes</h4>
-                  <div className="space-y-2 text-gray-300 text-sm">
-                    <p>• No accident history</p>
-                    <p>• Regular maintenance records</p>
-                    <p>• Non-smoker vehicle</p>
-                    <p>• All original parts</p>
-                    <p>• Service history available</p>
+              {/* Card 3 - Our Mission */}
+              <motion.div
+                className="group bg-[#25614F]/10 rounded-2xl p-8 border-2 border-[#25614F]/40 hover:border-[#25614F]/60 transition-all duration-500"
+                whileHover={{ y: -5 }}
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="w-14 h-14 bg-[#25614F] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-7 h-7 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-[#EAE2D6] mb-3">
+                      Our Goal
+                    </h3>
                   </div>
                 </div>
-                <div className="mt-6 text-center">
-                  <p className="text-gray-400 text-sm mb-4">
-                    * Sample data for demonstration purposes
-                  </p>
-                  <motion.a
-                    href="/vehicles-for-import"
-                    className="btn-mirror bg-gradient-to-r from-primary to-secondary text-white px-8 py-3 rounded-xl font-bold hover:shadow-lg transition-all duration-300 inline-block"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    View More Vehicles
-                  </motion.a>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Before & After Import - Enhanced with Images */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.h2
-            className="text-5xl font-bold font-heading text-center mb-16 text-white"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Before & After Import
-          </motion.h2>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Before */}
-            <motion.div
-              className="relative group overflow-hidden rounded-2xl"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="relative h-96 overflow-hidden">
-                <img
-                  src="https://images.pexels.com/photos/1592384/pexels-photo-1592384.jpeg?auto=compress&cs=tinysrgb&w=800&q=80"
-                  alt="Car at Japanese Auction"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="flex items-center mb-4">
-                    <span className="w-4 h-4 bg-red-500 rounded-full mr-3"></span>
-                    <h3 className="text-2xl font-bold text-white">Before Import</h3>
-                  </div>
-                  <ul className="space-y-2 text-gray-200">
-                    <li>• Vehicle at Japanese auction</li>
-                    <li>• Limited inspection access</li>
-                    <li>• Language barriers</li>
-                    <li>• Complex customs process</li>
-                    <li>• Uncertain total costs</li>
-                  </ul>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* After */}
-            <motion.div
-              className="relative group overflow-hidden rounded-2xl"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="relative h-96 overflow-hidden">
-                <img
-                  src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=800&q=80"
-                  alt="Delivered Car in Melbourne"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-8">
-                  <div className="flex items-center mb-4">
-                    <span className="w-4 h-4 bg-primary rounded-full mr-3"></span>
-                    <h3 className="text-2xl font-bold text-white">After Import</h3>
-                  </div>
-                  <ul className="space-y-2 text-gray-200">
-                    <li>• Fully compliant Australian vehicle</li>
-                    <li>• Complete documentation</li>
-                    <li>• Professional Melbourne handover</li>
-                    <li>• Ongoing maintenance support</li>
-                    <li>• Peace of mind guarantee</li>
-                  </ul>
-                </div>
-              </div>
+                <p className="text-[#EAE2D6] font-semibold text-lg leading-relaxed">
+                  To help people import good cars safely, transparently, and with confidence.
+                </p>
+              </motion.div>
             </motion.div>
           </div>
 
-          {/* Stats */}
+          {/* Bottom Stats Bar */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="text-center p-8 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30">
-              <div className="text-6xl font-bold text-primary mb-3">100%</div>
-              <p className="text-gray-300">Compliance Achievement</p>
-            </div>
-            <div className="text-center p-8 rounded-xl bg-gradient-to-br from-secondary/20 to-secondary/10 border border-secondary/30">
-              <div className="text-6xl font-bold text-secondary mb-3">4-6</div>
-              <p className="text-gray-300">Weeks Average Delivery</p>
-            </div>
-            <div className="text-center p-8 rounded-xl bg-gradient-to-br from-primary/20 to-primary/10 border border-primary/30">
-              <div className="text-6xl font-bold text-primary mb-3">24/7</div>
-              <p className="text-gray-300">Customer Support</p>
-            </div>
+            {[
+              {
+                icon: (
+                  <svg className="w-8 h-8 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                  </svg>
+                ),
+                title: 'Transparent Process',
+                description: 'Clear explanation at every step'
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                ),
+                title: 'Personalized Service',
+                description: 'Tailored to your needs & budget'
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+                title: 'Quality Assured',
+                description: 'Real auction experience & checks'
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="group bg-[#0F1614] rounded-xl p-6 border border-[#25614F]/20 hover:border-[#25614F]/40 transition-all duration-300 text-center"
+                whileHover={{ y: -5 }}
+                variants={fadeInUp}
+              >
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-[#25614F]/20 rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
+                </div>
+                <h4 className="text-xl font-bold text-[#E AE2D6] mb-2 group-hover:text-[#A88F5C] transition-colors duration-300">
+                  {item.title}
+                </h4>
+                <p className="text-[#BDB6AD] text-sm">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Testimonials Coming Soon */}
-      <section className="py-20 bg-carbon">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* 3️⃣ CORE PRINCIPLES */}
+      <section className="py-24 bg-[#0F1614]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
-            className="text-4xl font-bold font-heading mb-12 text-white"
+            className="text-4xl md:text-5xl font-bold font-heading text-center mb-16 text-[#EAE2D6]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            Customer Reviews
+            What We Focus On
           </motion.h2>
-          
+
           <motion.div
-            className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-12 border border-gray-700"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            {/* Full Transparency */}
+            <motion.div
+              className="bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/30 hover:border-[#25614F]/60 transition-all duration-500"
+              variants={fadeInUp}
+              whileHover={{ y: -5 }}
+            >
+              <h3 className="text-2xl font-bold text-[#EAE2D6] mb-6">FULL TRANSPARENCY</h3>
+              <ul className="space-y-3 text-[#BDB6AD]">
+                <li>• Clear explanation of the import process</li>
+                <li>• Open cost breakdowns</li>
+                <li>• No hidden fees or unclear steps</li>
+              </ul>
+            </motion.div>
+
+            {/* Tailored Guidance */}
+            <motion.div
+              className="bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/30 hover:border-[#25614F]/60 transition-all duration-500"
+              variants={fadeInUp}
+              whileHover={{ y: -5 }}
+            >
+              <h3 className="text-2xl font-bold text-[#EAE2D6] mb-6">TAILORED GUIDANCE</h3>
+              <ul className="space-y-3 text-[#BDB6AD]">
+                <li>• Vehicles sourced based on needs and budget</li>
+                <li>• Support for daily drivers, performance, and collector vehicles</li>
+                <li>• One-on-one guidance throughout</li>
+              </ul>
+            </motion.div>
+
+            {/* Experience-Led Approach */}
+            <motion.div
+              className="bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/30 hover:border-[#25614F]/60 transition-all duration-500"
+              variants={fadeInUp}
+              whileHover={{ y: -5 }}
+            >
+              <h3 className="text-2xl font-bold text-[#EAE2D6] mb-6">EXPERIENCE-LED APPROACH</h3>
+              <ul className="space-y-3 text-[#BDB6AD]">
+                <li>• Real auction experience</li>
+                <li>• Condition checks beyond auction grades</li>
+                <li>• Long-term thinking, not quick sales</li>
+              </ul>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 4️⃣ PROCESS PREVIEW */}
+      <section className="relative py-32 overflow-hidden bg-carbon">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="text-6xl text-primary mb-6">"</div>
-            <h3 className="text-2xl font-bold text-white mb-4">Testimonials Coming Soon</h3>
-            <p className="text-lg text-gray-300 mb-8">
-              After January Launch - Real customer reviews will be featured here
+            <motion.div
+              className="inline-flex items-center gap-3 bg-[#25614F]/20 rounded-full px-6 py-3 mb-6 border border-[#25614F]/30"
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="w-2 h-2 bg-[#25614F] rounded-full animate-pulse"></div>
+              <span className="text-[#25614F] font-semibold text-sm uppercase tracking-wider">6-Step Process</span>
+            </motion.div>
+
+            <h2 className="text-5xl md:text-6xl font-bold font-heading mb-6 text-[#EAE2D6]">
+              Our Import Process
+            </h2>
+            <div className="w-24 h-1 bg-[#25614F] mx-auto rounded-full mb-8"></div>
+            <p className="text-xl text-[#BDB6AD] max-w-3xl mx-auto leading-relaxed">
+              Importing a vehicle is a big decision. We guide you through each stage, explain things as we go, and make sure expectations are clear from the start.
             </p>
-            <div className="flex justify-center space-x-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
-                <span className="text-white text-2xl">★</span>
-              </div>
-              <div className="w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center">
-                <span className="text-white text-2xl">★</span>
-              </div>
-              <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
-                <span className="text-white text-2xl">★</span>
-              </div>
-            </div>
+          </motion.div>
+
+          {/* Process Steps with Connecting Lines */}
+          <div className="relative">
+            {/* Connecting Line - Desktop */}
+            <div className="hidden lg:block absolute top-20 left-0 right-0 h-0.5 bg-[#25614F]/30"
+              style={{ top: '80px', left: '8%', right: '8%' }}
+            ></div>
+
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16"
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              {[
+                {
+                  step: '1',
+                  title: 'Consultation & budget guidance',
+                  icon: (
+                    <svg className="w-7 h-7 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
+                  )
+                },
+                {
+                  step: '2',
+                  title: 'Vehicle sourcing',
+                  icon: (
+                    <svg className="w-7 h-7 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  )
+                },
+                {
+                  step: '3',
+                  title: 'Bid approval & deposit',
+                  icon: (
+                    <svg className="w-7 h-7 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  )
+                },
+                {
+                  step: '4',
+                  title: 'Purchase & shipping',
+                  icon: (
+                    <svg className="w-7 h-7 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                    </svg>
+                  )
+                },
+                {
+                  step: '5',
+                  title: 'Customs & compliance support',
+                  icon: (
+                    <svg className="w-7 h-7 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  )
+                },
+                {
+                  step: '6',
+                  title: 'Registration assistance & delivery',
+                  icon: (
+                    <svg className="w-7 h-7 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  )
+                }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="relative group"
+                  variants={fadeInUp}
+                  whileHover={{ y: -10 }}
+                >
+                  <div className="relative bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/20 hover:border-[#25614F]/50 transition-all duration-500 h-full">
+                    {/* Step Number Badge */}
+                    <div className="absolute -top-5 -left-5 w-14 h-14 bg-[#25614F] rounded-2xl flex items-center justify-center border-4 border-[#0F1614] group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-[#EAE2D6] text-xl font-bold">{item.step}</span>
+                    </div>
+
+                    {/* Icon */}
+                    <div className="w-16 h-16 bg-[#25614F]/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300 ml-6 mt-2">
+                      {item.icon}
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-xl font-bold text-[#EAE2D6] mb-3 group-hover:text-[#A88F5C] transition-colors duration-300">
+                      {item.title}
+                    </h3>
+
+                    {/* Progress Indicator */}
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#25614F]/20 rounded-b-2xl overflow-hidden">
+                      <motion.div
+                        className="h-full bg-[#25614F]"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: '100%' }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: index * 0.2 }}
+                      ></motion.div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* CTA Section */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <Link
+              href="/import-process"
+              className="bg-[#25614F] text-[#EAE2D6] px-12 py-5 rounded-xl font-bold text-lg hover:bg-[#1e4f3f] border-2 border-[#25614F]/30 hover:border-[#25614F]/50 transition-all duration-300 inline-flex items-center gap-3 group"
+            >
+              <span>View full process</span>
+              <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="py-20 bg-gradient-to-r from-primary via-primary/90 to-secondary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-4xl md:text-6xl font-bold font-heading mb-8 text-white"
+      {/* 5️⃣ WHY IMPORT FROM JAPAN (EDUCATIONAL) */}
+      <section className="relative py-24 overflow-hidden bg-[#0F1614]">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          <motion.div
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            Start Your Import Today
-          </motion.h2>
-          <motion.p
-            className="text-xl text-white/90 mb-12 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Join hundreds of satisfied customers who've imported their dream JDM cars with UMZE Autohaus
-          </motion.p>
+            <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-[#EAE2D6]">
+              Why Import from Japan?
+            </h2>
+            <div className="w-24 h-1 bg-[#25614F] mx-auto rounded-full"></div>
+          </motion.div>
+
           <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            {/* Benefit 1 */}
+            <motion.div
+              className="group bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/20 hover:border-[#25614F]/50 transition-all duration-500"
+              variants={fadeInUp}
+              whileHover={{ y: -5, scale: 1.02 }}
+            >
+              <div className="w-14 h-14 bg-[#25614F] rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-7 h-7 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-[#EAE2D6] mb-4 group-hover:text-[#A88F5C] transition-colors duration-300">
+                Lower kilometres and better condition
+              </h3>
+              <p className="text-[#BDB6AD] leading-relaxed">
+                Japanese vehicles are typically well-maintained with genuine low mileage due to strict inspection standards and excellent road infrastructure
+              </p>
+            </motion.div>
+
+            {/* Benefit 2 */}
+            <motion.div
+              className="group bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/20 hover:border-[#25614F]/50 transition-all duration-500"
+              variants={fadeInUp}
+              whileHover={{ y: -5, scale: 1.02 }}
+            >
+              <div className="w-14 h-14 bg-[#25614F] rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-7 h-7 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-[#EAE2D6] mb-4 group-hover:text-[#A88F5C] transition-colors duration-300">
+                Transparent auction history
+              </h3>
+              <p className="text-[#BDB6AD] leading-relaxed">
+                Complete documentation and grading system provide clear vehicle history, allowing for informed purchasing decisions
+              </p>
+            </motion.div>
+
+            {/* Benefit 3 */}
+            <motion.div
+              className="group bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/20 hover:border-[#25614F]/50 transition-all duration-500"
+              variants={fadeInUp}
+              whileHover={{ y: -5, scale: 1.02 }}
+            >
+              <div className="w-14 h-14 bg-[#25614F] rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-7 h-7 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-[#EAE2D6] mb-4 group-hover:text-[#A88F5C] transition-colors duration-300">
+                Access to vehicles not readily available in Australia
+              </h3>
+              <p className="text-[#BDB6AD] leading-relaxed">
+                Wide selection of models, special editions, and specifications that are rare or not imported to the local market
+              </p>
+            </motion.div>
+
+            {/* Benefit 4 */}
+            <motion.div
+              className="group bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/20 hover:border-[#25614F]/50 transition-all duration-500"
+              variants={fadeInUp}
+              whileHover={{ y: -5, scale: 1.02 }}
+            >
+              <div className="w-14 h-14 bg-[#25614F] rounded-xl flex items-center justify-center mb-6">
+                <svg className="w-7 h-7 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-[#EAE2D6] mb-4 group-hover:text-[#A88F5C] transition-colors duration-300">
+                Higher specifications compared to local market cars
+              </h3>
+              <p className="text-[#BDB6AD] leading-relaxed">
+                Japanese domestic market often features superior equipment, performance options, and factory specifications
+              </p>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="text-center bg-[#25614F]/10 rounded-2xl p-8 border border-[#25614F]/20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <motion.a
-              href="/import-now"
-              className="btn-mirror bg-white text-primary px-12 py-6 rounded-2xl font-bold text-xl shadow-2xl hover:shadow-white/50 transition-all duration-300 relative group inline-block"
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
+            <p className="text-xl text-[#EAE2D6] font-semibold italic">
+              Importing isn't about shortcuts — it's about making informed decisions.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 6️⃣ COST CLARITY (CALCULATOR DIRECTION) */}
+      <section className="relative py-32 overflow-hidden bg-carbon">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div
+              className="inline-block mb-6"
             >
-              <span className="relative z-10">Get Your Free Quote</span>
-            </motion.a>
-            <motion.a
+              <div className="w-20 h-20 bg-[#25614F] rounded-2xl flex items-center justify-center mx-auto">
+                <svg className="w-10 h-10 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+            </motion.div>
+            
+            <h2 className="text-5xl md:text-6xl font-bold font-heading mb-6 text-[#EAE2D6]">
+              Understand the Real Cost
+            </h2>
+            <div className="w-24 h-1 bg-[#25614F] mx-auto rounded-full mb-8"></div>
+            <p className="text-xl text-[#BDB6AD] max-w-3xl mx-auto">
+              Transparent pricing starts with clear expectations
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Left Column - Information */}
+            <motion.div
+              className="space-y-6"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/30 hover:border-[#25614F]/50 transition-all duration-500 group">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#25614F] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#EAE2D6] mb-2 group-hover:text-[#A88F5C] transition-colors duration-300">
+                      Vehicle Price
+                    </h3>
+                    <p className="text-[#BDB6AD]">
+                      The auction purchase price plus any applicable fees
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/30 hover:border-[#25614F]/50 transition-all duration-500 group">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#25614F] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#EAE2D6] mb-2 group-hover:text-[#A88F5C] transition-colors duration-300">
+                      Shipping & Insurance
+                    </h3>
+                    <p className="text-[#BDB6AD]">
+                      Safe transport from Japan to Australian ports
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/30 hover:border-[#25614F]/50 transition-all duration-500 group">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#25614F] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#EAE2D6] mb-2 group-hover:text-[#A88F5C] transition-colors duration-300">
+                      Taxes & Compliance
+                    </h3>
+                    <p className="text-[#BDB6AD]">
+                      Import duties, GST, and Australian compliance requirements
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-[#0F1614] rounded-2xl p-8 border border-[#25614F]/30 hover:border-[#25614F]/50 transition-all duration-500 group">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#25614F] rounded-xl flex items-center justify-center flex-shrink-0">
+                    <svg className="w-6 h-6 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-[#EAE2D6] mb-2 group-hover:text-[#A88F5C] transition-colors duration-300">
+                      Registration
+                    </h3>
+                    <p className="text-[#BDB6AD]">
+                      Final registration and delivery to your location
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right Column - CTA Card */}
+            <motion.div
+              className="flex items-center"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="relative w-full">
+                <div className="relative bg-[#0F1614] rounded-3xl p-10 border border-[#25614F]/50">
+                  <div className="text-center mb-8">
+                    <div className="inline-flex items-center justify-center w-24 h-24 bg-[#25614F] rounded-2xl mb-6">
+                      <svg className="w-12 h-12 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    
+                    <h3 className="text-3xl font-bold text-[#EAE2D6] mb-4">
+                      Import Cost Calculator
+                    </h3>
+                    <p className="text-[#BDB6AD] mb-8 leading-relaxed">
+                      To keep expectations clear, we provide an import cost calculator that outlines estimated landed costs before you commit.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4 mb-8">
+                    <div className="flex items-center gap-3 text-[#BDB6AD]">
+                      <div className="w-6 h-6 bg-[#25614F]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 text-[#25614F]" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <span>Detailed cost breakdown</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-[#BDB6AD]">
+                      <div className="w-6 h-6 bg-[#25614F]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 text-[#25614F]" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <span>Accurate tax calculations</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-[#BDB6AD]">
+                      <div className="w-6 h-6 bg-[#25614F]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 text-[#25614F]" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <span>No hidden fees included</span>
+                    </div>
+                  </div>
+
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Link
+                      href="/import-now"
+                      className="block w-full text-center bg-[#25614F] text-[#EAE2D6] px-8 py-5 rounded-xl font-bold text-lg hover:bg-[#1e4f3f] border-2 border-[#25614F]/30 hover:border-[#25614F]/50 transition-all duration-300"
+                    >
+                      Use the calculator →
+                    </Link>
+                  </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Bottom Banner */}
+          <motion.div
+            className="bg-[#25614F]/10 rounded-2xl p-8 border border-[#25614F]/20 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <p className="text-lg text-[#BDB6AD]">
+              <span className="text-[#25614F] font-bold">Total transparency.</span> The total cost of importing a vehicle depends on the vehicle price, shipping, taxes, compliance, and registration—we break it all down clearly.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 7️⃣ CONTACT PROMPT */}
+      <section className="py-24 bg-[#0F1614]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold font-heading text-center mb-8 text-[#EAE2D6]"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            Thinking About Importing?
+          </motion.h2>
+
+          <motion.div
+            className="bg-[#0F1614] rounded-2xl p-10 border border-[#25614F]/30 mb-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <p className="text-lg text-[#BDB6AD] leading-relaxed text-center">
+              If you're considering importing a vehicle or want to understand whether it's the right option, get in touch. We'll talk through eligibility, timing, and realistic expectations before any commitment is made.
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <Link
               href="/contact-us"
-              className="btn-mirror border-2 border-white text-white px-12 py-6 rounded-2xl font-bold text-xl hover:bg-white hover:text-primary transition-all duration-300 shadow-2xl hover:shadow-white/20 inline-block"
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
+              className="bg-[#25614F] text-[#EAE2D6] px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#1e4f3f] border border-[#25614F]/20 hover:border-[#25614F]/40 transition-all duration-300 inline-block"
             >
-              Speak With Expert
-            </motion.a>
+              Get in touch
+            </Link>
           </motion.div>
         </div>
       </section>

@@ -1,8 +1,26 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export default function Resources() {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch('/api/blogs');
+        if (response.ok) {
+          const data = await response.json();
+          setBlogs(data);
+        }
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+      }
+    };
+    fetchBlogs();
+  }, []);
+
   const guides = [
     {
       title: "How Japanese Auctions Work",
@@ -51,29 +69,21 @@ export default function Resources() {
     }
   ];
 
-  const blogPosts = [
-    {
-      title: "Top 5 JDM Cars Under $30k to Import",
-      excerpt: "Discover the best value Japanese imports for Australian buyers",
-      date: "Jan 15, 2025",
-      readTime: "5 min read",
-      image: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=600&q=80"
-    },
-    {
-      title: "Why Importing Is Cheaper Than Buying Used Locally",
-      excerpt: "Cost analysis comparing imported vs local used car prices",
-      date: "Jan 10, 2025",
-      readTime: "7 min read",
-      image: "https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=600&q=80"
-    },
-    {
-      title: "Risks of Buying Unverified Vehicles",
-      excerpt: "What to watch out for when importing without professional help",
-      date: "Jan 5, 2025",
-      readTime: "6 min read",
-      image: "https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=600&q=80"
-    }
-  ];
+  const formatBlogs = (blogs: any[]) => {
+    return blogs.map(blog => ({
+      title: blog.title,
+      excerpt: blog.content.substring(0, 150) + '...', // Truncate content for excerpt
+      date: new Date(blog.publicationDate).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      }),
+      readTime: `${Math.ceil(blog.content.split(' ').length / 200)} min read`, // Estimate read time
+      image: blog.images && blog.images.length > 0 ? blog.images[0] : "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=600&q=80"
+    }));
+  };
+
+  const blogPosts = formatBlogs(blogs);
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },

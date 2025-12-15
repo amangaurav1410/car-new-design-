@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,69 +18,46 @@ const Header = () => {
 
   const navItems = [
     { href: '/', label: 'Home' },
-    { href: '/vehicles-for-import', label: 'Vehicles For Import' },
-    { href: '/import-process', label: 'Import Process' },
-    { href: '/finance', label: 'Finance' },
-    { href: '/resources', label: 'Resources' },
-    { href: '/about-us', label: 'About Us' },
-    { href: '/contact-us', label: 'Contact Us' },
+    { href: '/about-us', label: 'About' },
+    { href: '/import-process', label: 'Our Process' },
+    { href: '/resources', label: 'FAQ' },
+    { href: '/finance', label: 'Calculator' },
+    { href: '/contact-us', label: 'Contact' },
   ];
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled
-        ? 'bg-black/50 backdrop-blur-xl border-b border-white/10 shadow-lg'
-        : ''
+        ? 'bg-[#0F1614] shadow-lg'
+        : 'bg-transparent'
     }`}>
       <div className="w-full px-6 lg:px-8">
-        <div className="flex justify-between items-center py-3">
+        <div className="flex justify-between items-center py-6">
           {/* Logo - Left */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-md flex items-center justify-center">
-                <span className="text-white font-bold text-lg">U</span>
-              </div>
-              <span className="text-xl font-bold font-heading text-white">
-                Umze Autohaus
-              </span>
+            <Link href="/" className="text-lg font-bold text-[#EAE2D6]">
+              UMZE AUTOHAUS
             </Link>
           </div>
 
-          {/* Desktop Navigation - Inline */}
-          <nav className="hidden md:flex items-center space-x-6">
+          {/* Desktop Navigation - Center */}
+          <nav className="hidden lg:flex items-center space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative text-white hover:text-primary transition-all duration-300 font-medium px-2 py-1 text-sm group"
+                className="text-[#EAE2D6] hover:text-white transition-colors duration-300 font-medium text-sm"
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300"></span>
               </Link>
             ))}
           </nav>
 
-          {/* Action Buttons - Right */}
-          <div className="hidden md:flex items-center space-x-3">
-            <Link
-              href="/import-now"
-              className="bg-white text-gray-900 px-4 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors border border-white/20"
-            >
-              Import Now
-            </Link>
-            <Link
-              href="/view-auctions"
-              className="bg-secondary text-white px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition-colors"
-            >
-              View Auctions
-            </Link>
-          </div>
-
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-primary focus:outline-none focus:text-primary transition-colors drop-shadow-lg"
+              className="text-[#EAE2D6] hover:text-white focus:outline-none transition-colors"
             >
               <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
                 {isOpen ? (
@@ -103,45 +79,18 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-black/80 backdrop-blur-lg border-t border-white/20 shadow-2xl">
+          <div className="lg:hidden bg-[#0F1614] border-t border-gray-700">
             <div className="px-4 pt-4 pb-6 space-y-2">
-              {navItems.map((item, index) => (
-                <motion.div
+              {navItems.map((item) => (
+                <Link
                   key={item.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  href={item.href}
+                  className="block px-4 py-3 text-sm font-medium text-[#EAE2D6] hover:text-white hover:bg-gray-800 transition-all duration-300 rounded-lg"
+                  onClick={() => setIsOpen(false)}
                 >
-                  <Link
-                    href={item.href}
-                    className="block px-4 py-3 text-lg font-medium text-white hover:text-primary hover:bg-white/10 transition-all duration-300 rounded-xl border border-transparent hover:border-white/20"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                </motion.div>
+                  {item.label}
+                </Link>
               ))}
-              <motion.div
-                className="pt-4 border-t border-white/20 space-y-3"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                <Link
-                  href="/import-now"
-                  className="block bg-accent text-white px-6 py-4 rounded-xl font-bold text-center hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-accent/50"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Import Now
-                </Link>
-                <Link
-                  href="/view-auctions"
-                  className="block bg-secondary text-white px-6 py-4 rounded-xl font-bold text-center hover:bg-opacity-90 transition-all duration-300 shadow-lg hover:shadow-secondary/50"
-                  onClick={() => setIsOpen(false)}
-                >
-                  View Auctions
-                </Link>
-              </motion.div>
             </div>
           </div>
         )}
