@@ -207,7 +207,7 @@ export default function Blog() {
                 {/* Image */}
                 <div className="relative h-64 md:h-auto">
                   <img
-                    src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&w=800&q=80"
                     alt="Benefits of importing from Japan"
                     className="w-full h-full object-cover"
                   />
@@ -256,7 +256,7 @@ export default function Blog() {
                 {/* Image */}
                 <div className="relative h-64 md:h-auto md:order-2">
                   <img
-                    src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.unsplash.com/photo-1544829099-b9a0c6fd3a04?auto=format&fit=crop&w=800&q=80"
                     alt="Common mistakes in importing"
                     className="w-full h-full object-cover"
                   />
@@ -305,7 +305,7 @@ export default function Blog() {
                 {/* Image */}
                 <div className="relative h-64 md:h-auto">
                   <img
-                    src="https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=800&q=80"
+                    src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800&q=80"
                     alt="Australian import rules"
                     className="w-full h-full object-cover"
                   />
