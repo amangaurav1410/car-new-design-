@@ -108,7 +108,7 @@ const Footer = () => {
               {[
                 { label: 'Import Process', href: '/import-process' },
                 { label: 'Import Catalogue', href: '/vehicles-for-import' },
-                { label: 'Finance Options', href: '/finance' },
+                { label: 'Calculator', href: '/calculator' },
                 { label: 'In Stock', href: '/view-auctions' }
               ].map((link, index) => (
                 <li key={index}>

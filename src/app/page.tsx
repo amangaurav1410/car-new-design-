@@ -75,7 +75,7 @@ export default function Home() {
             
             {/* Secondary CTA */}
             <motion.a
-              href="/finance"
+              href="/calculator"
               className="border-2 border-[#BDB6AD] text-[#EAE2D6] px-10 py-5 rounded-lg font-bold text-lg hover:bg-[#BDB6AD]/10 transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}

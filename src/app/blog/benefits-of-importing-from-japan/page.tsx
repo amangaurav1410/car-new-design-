@@ -123,7 +123,7 @@ export default function BenefitsOfImportingFromJapan() {
               Get in Touch
             </Link>
             <Link
-              href="/finance"
+              href="/calculator"
               className="border-2 border-[#EAE2D6] text-[#EAE2D6] px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#EAE2D6]/10 transition-all duration-300 inline-block"
             >
               View Calculator
