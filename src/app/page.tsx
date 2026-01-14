@@ -73,7 +73,7 @@ export default function Home() {
             >
               Get in touch
             </motion.a>
-            
+
             {/* Secondary CTA */}
             <motion.a
               href="/calculator"
@@ -142,10 +142,10 @@ export default function Home() {
                     alt="Japanese Car Import"
                     className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
-                  
+
                   {/* Overlay Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                  
+
                   {/* Floating Stats */}
                   <div className="absolute bottom-8 left-8 right-8 grid grid-cols-2 gap-4">
                     <motion.div
@@ -487,18 +487,18 @@ export default function Home() {
                     <div className="relative w-32 h-32 bg-gradient-to-br from-[#25614F] to-[#1e4f3f] rounded-full flex items-center justify-center shadow-2xl">
                       {/* Glow Effect */}
                       <div className="absolute inset-0 rounded-full bg-[#25614F] opacity-20 blur-xl"></div>
-                      
+
                       {/* Step Number */}
                       <div className="absolute -top-2 -right-2 w-12 h-12 bg-[#EAE2D6] rounded-full flex items-center justify-center shadow-lg border-4 border-[#0F1614]">
                         <span className="text-[#25614F] font-bold text-lg">{item.step}</span>
                       </div>
-                      
+
                       {/* Icon */}
                       <div className="relative z-10 text-[#EAE2D6]">
                         {item.icon}
                       </div>
                     </div>
-                    
+
                     {/* Connection Line */}
                     {index < 5 && (
                       <div className={`hidden md:block absolute top-32 ${isEven ? 'left-1/2' : 'right-1/2'} w-px h-16 bg-gradient-to-b from-[#25614F]/50 to-transparent`}></div>
@@ -539,7 +539,7 @@ export default function Home() {
               >
                 {/* Animated Background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#1e4f3f] to-[#25614F] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
+
                 <span className="relative z-10">View full process</span>
                 <svg className="relative z-10 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -683,7 +683,7 @@ export default function Home() {
                 </svg>
               </div>
             </motion.div>
-            
+
             <h2 className="text-5xl md:text-6xl font-bold font-heading mb-6 text-[#EAE2D6]">
               Understand the Real Cost
             </h2>
@@ -791,7 +791,7 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                       </svg>
                     </div>
-                    
+
                     <h3 className="text-3xl font-bold text-[#EAE2D6] mb-4">
                       Import Cost Calculator
                     </h3>
@@ -899,7 +899,7 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
-      
+
       {/* Testimonials Section */}
       <section className="py-32 bg-[#0F1614] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
@@ -908,7 +908,7 @@ export default function Home() {
             backgroundSize: '50px 50px'
           }}></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -923,7 +923,7 @@ export default function Home() {
             <div className="w-24 h-1 bg-[#25614F] mx-auto rounded-full mb-4"></div>
             <div className="w-16 h-1 bg-[#25614F]/50 mx-auto rounded-full"></div>
           </motion.div>
-          
+
           {/* Testimonial Carousel */}
           <TestimonialCarousel />
 
@@ -944,10 +944,10 @@ export default function Home() {
               whileTap={{ scale: 0.95 }}
             >
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
               </svg>
               Read Our Google Reviews
             </motion.a>
@@ -975,7 +975,7 @@ export default function Home() {
               <div className="w-3 h-3 bg-[#25614F] rounded-full animate-pulse"></div>
               <span className="text-[#25614F] font-semibold text-sm uppercase tracking-wider">100+ Vehicles Successfully Imported</span>
             </motion.div>
-            
+
             <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 text-[#EAE2D6]">
               Our Past Imports
             </h2>
@@ -985,93 +985,33 @@ export default function Home() {
               High-quality vehicles imported from Japan with meticulous attention to detail and transparent processes
             </p>
           </motion.div>
-          
+
           {/* Enhanced Gallery with Vehicle Information */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 image: '/images/WhatsApp Image 2025-12-22 at 15.59.28.jpeg',
-                title: '2025 Import - Vehicle 1',
-                price: '$45,000',
-                specs: 'Imported December 2025',
-                condition: 'Grade 4B - Excellent'
+                title: '2025 Import - Vehicle 1'
               },
               {
                 image: '/images/WhatsApp Image 2025-12-22 at 16.03.45.jpeg',
-                title: '2025 Import - Vehicle 2',
-                price: '$52,000',
-                specs: 'Imported December 2025',
-                condition: 'Grade 4B - Excellent'
+                title: '2025 Import - Vehicle 2'
               },
               {
                 image: '/images/WhatsApp Image 2025-12-22 at 16.04.14.jpeg',
-                title: '2025 Import - Vehicle 3',
-                price: '$48,000',
-                specs: 'Imported December 2025',
-                condition: 'Grade 4B - Excellent'
+                title: '2025 Import - Vehicle 3'
               },
               {
                 image: '/images/WhatsApp Image 2025-12-22 at 16.04.25.jpeg',
-                title: '2025 Import - Vehicle 4',
-                price: '$47,500',
-                specs: 'Imported December 2025',
-                condition: 'Grade 4B - Excellent'
+                title: '2025 Import - Vehicle 4'
               },
               {
                 image: '/images/WhatsApp Image 2025-12-22 at 16.08.41.jpeg',
-                title: '2025 Import - Vehicle 5',
-                price: '$46,800',
-                specs: 'Imported December 2025',
-                condition: 'Grade 4B - Excellent'
+                title: '2025 Import - Vehicle 5'
               },
               {
                 image: '/images/WhatsApp Image 2025-12-22 at 16.09.29.jpeg',
-                title: '2025 Import - Vehicle 6',
-                price: '$51,200',
-                specs: 'Imported December 2025',
-                condition: 'Grade 4B - Excellent'
-              },
-              {
-                image: '/images/WhatsApp Image 2025-12-22 at 16.12.18.jpeg',
-                title: '2025 Import - Vehicle 7',
-                price: '$38,500',
-                specs: 'Imported December 2025',
-                condition: 'Grade 4B - Excellent'
-              },
-              {
-                image: '/images/WhatsApp Image 2025-12-22 at 16.12.56.jpeg',
-                title: '2025 Import - Vehicle 8',
-                price: '$42,000',
-                specs: 'Imported December 2025',
-                condition: 'Grade 4B - Excellent'
-              },
-              {
-                image: '/images/WhatsApp Image 2025-12-22 at 16.13.17.jpeg',
-                title: '2025 Import - Vehicle 9',
-                price: '$44,000',
-                specs: 'Imported December 2025',
-                condition: 'Grade 4B - Excellent'
-              },
-              {
-                image: '/images/WhatsApp Image 2025-12-22 at 16.13.45.jpeg',
-                title: '2025 Import - Vehicle 10',
-                price: '$49,000',
-                specs: 'Imported December 2025',
-                condition: 'Grade 4B - Excellent'
-              },
-              {
-                image: '/images/WhatsApp Image 2025-12-22 at 16.14.02.jpeg',
-                title: '2025 Import - Vehicle 11',
-                price: '$41,500',
-                specs: 'Imported December 2025',
-                condition: 'Grade 4B - Excellent'
-              },
-              {
-                image: '/images/WhatsApp Image 2025-12-22 at 16.14.32.jpeg',
-                title: '2025 Import - Vehicle 12',
-                price: '$43,000',
-                specs: 'Imported December 2025',
-                condition: 'Grade 4B - Excellent'
+                title: '2025 Import - Vehicle 6'
               }
             ].map((vehicle, index) => (
               <motion.div
@@ -1084,50 +1024,20 @@ export default function Home() {
                 whileHover={{ y: -5 }}
               >
                 {/* Image Container */}
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden aspect-[4/3]">
                   <img
                     src={vehicle.image}
                     alt={vehicle.title}
-                    className="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                   />
-                  
+
                   {/* Overlay Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                  
-                  {/* Price Badge */}
-                  <div className="absolute top-4 left-4 bg-[#25614F] text-[#EAE2D6] px-3 py-1 rounded-full text-sm font-bold">
-                    {vehicle.price}
-                  </div>
-                  
-                  {/* Condition Badge */}
-                  <div className="absolute top-4 right-4 bg-[#0F1614]/90 text-[#BDB6AD] px-3 py-1 rounded-full text-sm border border-[#25614F]/30">
-                    {vehicle.condition}
-                  </div>
-                </div>
-                
-                {/* Vehicle Details */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-[#EAE2D6] mb-2 group-hover:text-[#A88F5C] transition-colors duration-300">
-                    {vehicle.title}
-                  </h3>
-                  <p className="text-[#BDB6AD] text-sm mb-4">
-                    {vehicle.specs}
-                  </p>
-                  
-                  {/* Hover Details */}
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="flex justify-between items-center">
-                      <span className="text-[#25614F] font-semibold text-sm">View Details</span>
-                      <svg className="w-4 h-4 text-[#25614F]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
                 </div>
               </motion.div>
             ))}
           </div>
-          
+
           {/* CTA Section */}
           <motion.div
             className="text-center mt-16"
