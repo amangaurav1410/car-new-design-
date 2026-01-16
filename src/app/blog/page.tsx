@@ -26,7 +26,7 @@ export default function Blog() {
       date: 'December 24, 2025',
       readTime: '12 min read',
       category: 'Buyer Education',
-      imagePrompt: 'japanese car auction sheet document detailing grading scores close up high quality'
+      image: '/images/WhatsApp Image 2025-12-22 at 16.08.41.jpeg'
     },
     {
       id: 'how-to-read-auction-sheet',
@@ -35,7 +35,7 @@ export default function Blog() {
       date: 'December 24, 2025',
       readTime: '10 min read',
       category: 'Beginner Guide',
-      imagePrompt: 'person reading authentic japanese car auction sheet paper guide'
+      image: '/images/WhatsApp Image 2025-12-22 at 16.04.14.jpeg'
     },
     {
       id: 'benefits-of-importing-from-japan',
@@ -44,7 +44,7 @@ export default function Blog() {
       date: 'January 9, 2026',
       readTime: '8 min read',
       category: 'Buyer Education',
-      imagePrompt: 'shipping dock in japan with rows of jdm sports cars ready for export cinematic'
+      image: '/images/most-beautiful-japanese-cars-01.jpg'
     },
     {
       id: 'common-mistakes-people-make-when-importing-cars-from-japan',
@@ -53,7 +53,7 @@ export default function Blog() {
       date: 'January 9, 2026',
       readTime: '10 min read',
       category: 'Buyer Education',
-      imagePrompt: 'mechanic inspecting a used car engine bay for problems realistic'
+      image: '/images/WhatsApp Image 2025-12-22 at 16.04.25.jpeg'
     },
     {
       id: 'what-cars-can-be-imported-into-australia-rules-restrictions-common-confusion',
@@ -62,13 +62,9 @@ export default function Blog() {
       date: 'January 9, 2026',
       readTime: '12 min read',
       category: 'Import Rules',
-      imagePrompt: 'shipping container ship arriving in sydney harbour with cars cinematic'
+      image: '/images/integra_type-r_5.webp'
     }
   ];
-
-  const getImageUrl = (prompt: string) => {
-    return `https://image.pollinations.ai/prompt/${encodeURIComponent(prompt)}?width=800&height=600&nologo=true&seed=${Math.floor(Math.random() * 100)}`;
-  };
 
   return (
     <div className="bg-carbon">
@@ -119,7 +115,7 @@ export default function Blog() {
                   {/* Image */}
                   <div className={`relative h-64 md:h-auto overflow-hidden ${index % 2 !== 0 ? 'md:order-2' : ''}`}>
                     <img
-                      src={getImageUrl(blog.imagePrompt)}
+                      src={blog.image}
                       alt={blog.title}
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                     />

@@ -129,17 +129,8 @@ export default function VehicleListingClient({ initialVehicles, filterOptions }:
                         transition={{ duration: 1, delay: 0.9 }}
                     >
                         <motion.a
-                            href="/view-auctions"
-                            className="bg-[#25614F] text-[#EAE2D6] px-12 py-5 rounded-full font-bold text-lg hover:bg-[#1e4f3f] transition-all duration-300 shadow-xl"
-                            whileHover={{ scale: 1.05, y: -2 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            View Live Auctions
-                        </motion.a>
-
-                        <motion.a
                             href="/import-now"
-                            className="border-2 border-[#EAE2D6]/80 text-[#EAE2D6] px-12 py-5 rounded-full font-bold text-lg hover:bg-[#EAE2D6] hover:text-[#25614F] transition-all duration-300 shadow-xl backdrop-blur-sm bg-[#EAE2D6]/5"
+                            className="bg-[#25614F] text-[#EAE2D6] px-12 py-5 rounded-full font-bold text-lg hover:bg-[#1e4f3f] transition-all duration-300 shadow-xl"
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
                         >

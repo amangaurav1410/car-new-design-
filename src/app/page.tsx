@@ -138,10 +138,10 @@ export default function Home() {
                 {/* Image Container */}
                 <div className="relative overflow-hidden rounded-3xl border-2 border-[#25614F]/30 group-hover:border-[#25614F]/50 transition-all duration-500">
                   <img
-                    src="/images/06 Honda NSX - credit Honda copy.jpg"
-                    alt="Japanese Car Import"
-                    className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
-                  />
+                     src="/images/most-beautiful-japanese-cars-01.jpg"
+                     alt="Japanese Car Import"
+                     className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                   />
 
                   {/* Overlay Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>

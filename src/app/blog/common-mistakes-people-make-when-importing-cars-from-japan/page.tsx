@@ -10,7 +10,7 @@ export default function CommonMistakesPeopleMakeWhenImportingCarsFromJapan() {
       <section className="relative text-white h-screen flex items-center overflow-hidden -mt-20 pt-20">
         <div className="absolute inset-0">
           <img
-            src="/images/WhatsApp Image 2025-12-22 at 16.03.45.jpeg"
+            src="/images/WhatsApp Image 2025-12-22 at 16.04.25.jpeg"
             alt="Japanese car import process and common mistakes"
             className="w-full h-full object-cover"
           />
