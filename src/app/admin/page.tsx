@@ -21,7 +21,7 @@ export default function AdminDashboard() {
     setLoading(true);
     try {
       const token = localStorage.getItem('token');
-      const headers = token ? { Authorization: `Bearer ${token}` } : {};
+      const headers: HeadersInit = token ? { Authorization: `Bearer ${token}` } : {};
 
       // Fetch Vehicles Count
       const vRes = await fetch('/api/vehicles?limit=1', { headers });

@@ -4,20 +4,23 @@ import { notFound } from 'next/navigation';
 import VehicleDetailClient from './VehicleDetailClient';
 import { Vehicle } from '@/types/vehicle';
 
-export async function generateStaticParams() {
-    return [];
-}
+// Force dynamic rendering for this page
+export const dynamic = 'force-dynamic';
+export const dynamicParams = true;
 
 interface PageProps {
     params: Promise<{ slug: string }>;
 }
 
 async function getVehicle(slug: string): Promise<Vehicle | null> {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    // Use relative URL for API calls - works on both local and Vercel
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ||
+        (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000');
 
     try {
         const res = await fetch(`${baseUrl}/api/vehicles/${slug}`, {
             cache: 'no-store',
+            next: { revalidate: 0 }
         });
 
         if (!res.ok) {
@@ -32,7 +35,8 @@ async function getVehicle(slug: string): Promise<Vehicle | null> {
 }
 
 async function getRelatedVehicles(vehicle: Vehicle): Promise<Vehicle[]> {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ||
+        (typeof window !== 'undefined' ? window.location.origin : 'http://localhost:3000');
 
     try {
         const params = new URLSearchParams({
@@ -42,6 +46,7 @@ async function getRelatedVehicles(vehicle: Vehicle): Promise<Vehicle[]> {
 
         const res = await fetch(`${baseUrl}/api/vehicles?${params}`, {
             cache: 'no-store',
+            next: { revalidate: 0 }
         });
 
         if (!res.ok) {
