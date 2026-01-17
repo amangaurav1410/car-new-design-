@@ -20,7 +20,7 @@ export default function Calculator() {
     // Remove any non-numeric characters except decimal point, then parse
     const cleanedFobPrice = fobPrice.replace(/[^\d.]/g, '');
     const fobPriceNum = parseFloat(cleanedFobPrice) || 0;
-    
+
     const dutyAmount = fobPriceNum * (importDuty / 100);
     const gst = 0.10 * (fobPriceNum + SHIPPING_CHARGES + dutyAmount);
     const totalCost = fobPriceNum + dutyAmount + SHIPPING_CHARGES + gst + LOCAL_TRANSPORT + COMPLIANCE_COST + SERVICE_FEE;
@@ -48,7 +48,7 @@ export default function Calculator() {
       <section className="relative text-white h-screen flex items-center overflow-hidden -mt-20 pt-20">
         <div className="absolute inset-0">
           <img
-            src="/images/hero-bg.jpg"
+            src="/images/WhatsApp Image 2026-01-07 at 17.02.55 (7).jpeg"
             alt="Import Cost Calculator"
             className="w-full h-full object-cover animate-ken-burns"
           />
@@ -125,7 +125,7 @@ export default function Calculator() {
               </h2>
               <div className="w-24 h-1 bg-[#25614F] mx-auto rounded-full mb-4"></div>
               <div className="w-16 h-1 bg-[#25614F]/50 mx-auto rounded-full mb-8"></div>
-              
+
               <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {[
                   {
@@ -216,7 +216,7 @@ export default function Calculator() {
                             setFobPrice('0');
                             return;
                           }
-                          
+
                           // Format the value properly with commas for thousands
                           // First remove all non-numeric characters except decimal point
                           const cleanValue = fobPrice.replace(/[^0-9.]/g, '');
@@ -243,11 +243,10 @@ export default function Calculator() {
                     <div className="grid grid-cols-2 gap-4">
                       <motion.button
                         onClick={() => setImportDuty(0)}
-                        className={`py-5 px-4 rounded-xl font-bold text-lg transition-all duration-300 ${
-                          importDuty === 0
+                        className={`py-5 px-4 rounded-xl font-bold text-lg transition-all duration-300 ${importDuty === 0
                             ? 'bg-gradient-to-br from-[#25614F] to-[#1e4f3f] text-[#EAE2D6] border-2 border-[#25614F] shadow-lg'
                             : 'bg-[#1a2420] text-[#BDB6AD] border-2 border-[#25614F]/30 hover:border-[#25614F]/60'
-                        }`}
+                          }`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -256,11 +255,10 @@ export default function Calculator() {
                       </motion.button>
                       <motion.button
                         onClick={() => setImportDuty(5)}
-                        className={`py-5 px-4 rounded-xl font-bold text-lg transition-all duration-300 ${
-                          importDuty === 5
+                        className={`py-5 px-4 rounded-xl font-bold text-lg transition-all duration-300 ${importDuty === 5
                             ? 'bg-gradient-to-br from-[#25614F] to-[#1e4f3f] text-[#EAE2D6] border-2 border-[#25614F] shadow-lg'
                             : 'bg-[#1a2420] text-[#BDB6AD] border-2 border-[#25614F]/30 hover:border-[#25614F]/60'
-                        }`}
+                          }`}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >

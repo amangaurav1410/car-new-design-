@@ -15,7 +15,7 @@ export default function ContactUs() {
       <section className="relative text-white h-screen flex items-center overflow-hidden -mt-20 pt-20">
         <div className="absolute inset-0">
           <img
-            src="/images/hero-bg.jpg"
+            src="/images/WhatsApp Image 2026-01-07 at 16.11.44.jpeg"
             alt="Contact Umze Autohaus"
             className="w-full h-full object-cover animate-ken-burns"
           />
@@ -311,7 +311,7 @@ export default function ContactUs() {
                   <div className="bg-[#1a2420] p-8 text-center border border-[#25614F]/20">
                     <span className="text-6xl mb-4 block">🗺️</span>
                     <p className="text-[#EAE2D6] font-bold text-xl mb-2">Melbourne Office</p>
-                    <p className="text-[#BDB6AD]">Serving all of Victoria</p>
+                    <p className="text-[#BDB6AD]">Serving all of Australia</p>
                   </div>
                 </div>
               </div>
@@ -320,58 +320,7 @@ export default function ContactUs() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-[#25614F] via-[#25614F]/95 to-[#1e4f3f] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-white rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        </div>
 
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold font-heading mb-6 text-[#EAE2D6]"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            Ready to Start Your Import?
-          </motion.h2>
-          <motion.p
-            className="text-xl text-[#EAE2D6]/90 mb-12 max-w-2xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Fill out our contact form or call us directly to begin your car import journey.
-          </motion.p>
-          <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <motion.a
-              href="/import-now"
-              className="bg-[#EAE2D6] text-[#25614F] px-12 py-5 rounded-full font-bold text-lg hover:bg-white transition-all duration-300 shadow-2xl"
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10">Start Import Process</span>
-            </motion.a>
-            <motion.a
-              href="tel:+61420790798"
-              className="border-2 border-[#EAE2D6] text-[#EAE2D6] px-12 py-5 rounded-full font-bold text-lg hover:bg-[#EAE2D6]/10 backdrop-blur-sm transition-all duration-300"
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Call Now: +61 404 312 508
-            </motion.a>
-          </motion.div>
-        </div>
-      </section>
     </div>
   );
 }

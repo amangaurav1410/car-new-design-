@@ -15,7 +15,7 @@ export default function ImportNow() {
       <section className="relative text-white min-h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="/images/hero-bg.jpg"
+            src="/images/WhatsApp Image 2026-01-07 at 17.02.55 (8).jpeg"
             alt="Start your import journey"
             className="w-full h-full object-cover"
           />

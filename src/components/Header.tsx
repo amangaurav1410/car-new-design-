@@ -19,7 +19,7 @@ const Header = () => {
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/about-us', label: 'About Us' },
-    { href: '/vehicles-for-import', label: 'Our Import/Catalogue' },
+    { href: '/vehicles-for-import', label: 'Stock' },
     { href: '/import-process', label: 'Our Process' },
     { href: '/calculator', label: 'Calculator' },
     { href: '/blog', label: 'Blogs' },
@@ -27,11 +27,10 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
         ? 'bg-[#0F1614]/95 backdrop-blur-md shadow-lg'
         : 'bg-transparent'
-    }`}>
+      }`}>
       <div className="w-full px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">
           {/* Logo - Left */}

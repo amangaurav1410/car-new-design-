@@ -16,7 +16,7 @@ export default function HowToReadAuctionSheet() {
       <section className="relative text-white h-screen flex items-center overflow-hidden -mt-20 pt-20">
         <div className="absolute inset-0">
           <img
-            src="/images/WhatsApp Image 2025-12-22 at 16.04.14.jpeg"
+            src="/images/blog/wp9328703.jpg"
             alt="How to read Japanese auction sheet"
             className="w-full h-full object-cover animate-ken-burns"
           />

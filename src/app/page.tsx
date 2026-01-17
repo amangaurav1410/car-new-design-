@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import TestimonialCarousel from '@/components/TestimonialCarousel';
+import PastImportsCarousel from '@/components/PastImportsCarousel';
 
 export default function Home() {
   const fadeInUp = {
@@ -138,10 +139,10 @@ export default function Home() {
                 {/* Image Container */}
                 <div className="relative overflow-hidden rounded-3xl border-2 border-[#25614F]/30 group-hover:border-[#25614F]/50 transition-all duration-500">
                   <img
-                     src="/images/most-beautiful-japanese-cars-01.jpg"
-                     alt="Japanese Car Import"
-                     className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
-                   />
+                    src="/images/most-beautiful-japanese-cars-01.jpg"
+                    alt="Japanese Car Import"
+                    className="w-full h-[500px] object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  />
 
                   {/* Overlay Gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
@@ -986,57 +987,8 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* Enhanced Gallery with Vehicle Information */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                image: '/images/WhatsApp Image 2025-12-22 at 15.59.28.jpeg',
-                title: '2025 Import - Vehicle 1'
-              },
-              {
-                image: '/images/WhatsApp Image 2025-12-22 at 16.03.45.jpeg',
-                title: '2025 Import - Vehicle 2'
-              },
-              {
-                image: '/images/WhatsApp Image 2025-12-22 at 16.04.14.jpeg',
-                title: '2025 Import - Vehicle 3'
-              },
-              {
-                image: '/images/WhatsApp Image 2025-12-22 at 16.04.25.jpeg',
-                title: '2025 Import - Vehicle 4'
-              },
-              {
-                image: '/images/WhatsApp Image 2025-12-22 at 16.08.41.jpeg',
-                title: '2025 Import - Vehicle 5'
-              },
-              {
-                image: '/images/WhatsApp Image 2025-12-22 at 16.09.29.jpeg',
-                title: '2025 Import - Vehicle 6'
-              }
-            ].map((vehicle, index) => (
-              <motion.div
-                key={index}
-                className="group relative bg-[#0F1614] rounded-2xl overflow-hidden border border-[#25614F]/20 hover:border-[#25614F]/50 transition-all duration-500"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-              >
-                {/* Image Container */}
-                <div className="relative overflow-hidden aspect-[4/3]">
-                  <img
-                    src={vehicle.image}
-                    alt={vehicle.title}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                  />
-
-                  {/* Overlay Gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {/* Enhanced Gallery with Carousel */}
+          <PastImportsCarousel />
 
           {/* CTA Section */}
           <motion.div

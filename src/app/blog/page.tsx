@@ -26,7 +26,7 @@ export default function Blog() {
       date: 'December 24, 2025',
       readTime: '12 min read',
       category: 'Buyer Education',
-      image: '/images/WhatsApp Image 2025-12-22 at 16.08.41.jpeg'
+      image: '/images/blog/wp12190157.webp'
     },
     {
       id: 'how-to-read-auction-sheet',
@@ -35,7 +35,7 @@ export default function Blog() {
       date: 'December 24, 2025',
       readTime: '10 min read',
       category: 'Beginner Guide',
-      image: '/images/WhatsApp Image 2025-12-22 at 16.04.14.jpeg'
+      image: '/images/blog/wp9328703.jpg'
     },
     {
       id: 'benefits-of-importing-from-japan',
@@ -44,7 +44,7 @@ export default function Blog() {
       date: 'January 9, 2026',
       readTime: '8 min read',
       category: 'Buyer Education',
-      image: '/images/most-beautiful-japanese-cars-01.jpg'
+      image: '/images/blog/wp3486288.jpg'
     },
     {
       id: 'common-mistakes-people-make-when-importing-cars-from-japan',
@@ -53,7 +53,7 @@ export default function Blog() {
       date: 'January 9, 2026',
       readTime: '10 min read',
       category: 'Buyer Education',
-      image: '/images/WhatsApp Image 2025-12-22 at 16.04.25.jpeg'
+      image: '/images/blog/wp3159130.jpg'
     },
     {
       id: 'what-cars-can-be-imported-into-australia-rules-restrictions-common-confusion',
@@ -62,7 +62,7 @@ export default function Blog() {
       date: 'January 9, 2026',
       readTime: '12 min read',
       category: 'Import Rules',
-      image: '/images/integra_type-r_5.webp'
+      image: '/images/blog/thumb-1920-700305.jpg'
     }
   ];
 
@@ -72,7 +72,7 @@ export default function Blog() {
       <section className="relative text-white h-[60vh] flex items-center overflow-hidden -mt-20 pt-20">
         <div className="absolute inset-0">
           <img
-            src="/images/hero-bg.jpg"
+            src="/images/WhatsApp Image 2026-01-07 at 17.02.55 (5).jpeg"
             alt="Japanese vehicle import"
             className="w-full h-full object-cover"
           />

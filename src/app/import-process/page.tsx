@@ -86,7 +86,7 @@ export default function ImportProcess() {
       <section className="relative text-white h-screen flex items-center overflow-hidden -mt-20 pt-20">
         <div className="absolute inset-0">
           <img
-            src="/images/hero-bg.jpg"
+            src="/images/WhatsApp Image 2026-01-07 at 16.11.44 (3).jpeg"
             alt="Import process workflow"
             className="w-full h-full object-cover animate-ken-burns"
           />
@@ -197,18 +197,18 @@ export default function ImportProcess() {
                     <div className="relative w-32 h-32 bg-gradient-to-br from-[#25614F] to-[#1e4f3f] rounded-full flex items-center justify-center shadow-2xl">
                       {/* Glow */}
                       <div className="absolute inset-0 rounded-full bg-[#25614F] opacity-20 blur-xl"></div>
-                      
+
                       {/* Step Number Badge */}
                       <div className="absolute -top-2 -right-2 w-12 h-12 bg-[#EAE2D6] rounded-full flex items-center justify-center shadow-lg border-4 border-[#0F1614]">
                         <span className="text-[#25614F] font-bold text-lg">{step.number}</span>
                       </div>
-                      
+
                       {/* Emoji Icon */}
                       <div className="relative text-5xl">
                         {step.icon}
                       </div>
                     </div>
-                    
+
                     {/* Connection Line */}
                     {index < steps.length - 1 && (
                       <div className={`hidden md:block absolute top-32 ${isEven ? 'left-1/2' : 'right-1/2'} w-px h-20 bg-gradient-to-b from-[#25614F]/50 to-transparent`}></div>
@@ -313,7 +313,7 @@ export default function ImportProcess() {
                       <span className="text-[#EAE2D6] font-bold text-xl">{item.value}</span>
                     </motion.div>
                   ))}
-                  
+
                   {/* Total */}
                   <motion.div
                     className="flex justify-between items-center py-6 border-t-2 border-[#25614F]/50 mt-4"

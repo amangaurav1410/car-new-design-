@@ -16,7 +16,7 @@ export default function JapaneseAuctionGradingSystem() {
       <section className="relative text-white h-screen flex items-center overflow-hidden -mt-20 pt-20">
         <div className="absolute inset-0">
           <img
-            src="/images/WhatsApp Image 2025-12-22 at 16.03.45.jpeg"
+            src="/images/blog/wp12190157.webp"
             alt="Japanese auction grading system"
             className="w-full h-full object-cover animate-ken-burns"
           />
@@ -171,7 +171,7 @@ export default function JapaneseAuctionGradingSystem() {
             <p className="text-[#BDB6AD] leading-relaxed mb-6">
               The overall grade is the first thing people look at, and it's important. But it's only one piece of the puzzle.
             </p>
-            
+
             <div className="grid gap-4 mb-8">
               {[
                 { grade: 'S / 6 / 5', desc: 'Near-new condition. Minimal wear, often low kilometres.' },

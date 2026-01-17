@@ -68,7 +68,7 @@ export default function VehicleDetailClient({ vehicle, relatedVehicles }: Vehicl
                     <nav className="flex items-center gap-2 text-sm text-[#A9AAAE]">
                         <Link href="/" className="hover:text-[#25614F] transition-colors">Home</Link>
                         <span>/</span>
-                        <Link href="/vehicles-for-import" className="hover:text-[#25614F] transition-colors">Vehicles for Import</Link>
+                        <Link href="/vehicles-for-import" className="hover:text-[#25614F] transition-colors">Stock</Link>
                         <span>/</span>
                         <span className="text-[#EAE2D6]">{vehicle.brand} {vehicle.model}</span>
                     </nav>

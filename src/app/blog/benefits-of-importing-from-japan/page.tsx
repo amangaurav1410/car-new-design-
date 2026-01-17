@@ -10,9 +10,9 @@ export default function BenefitsOfImportingFromJapan() {
       <section className="relative text-white h-screen flex items-center overflow-hidden -mt-20 pt-20">
         <div className="absolute inset-0">
           <img
-            src="/images/2007-Mercedes-Benz-S63-AMG-Collecting-Cars-06-08-2025-Ari-Gelgec20.avif"
+            src="/images/blog/wp3486288.jpg"
             alt="Japanese luxury import vehicle"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover animate-ken-burns"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/80"></div>
         </div>

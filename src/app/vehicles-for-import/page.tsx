@@ -5,11 +5,11 @@ import { getVehicles } from '@/lib/vehicle-service';
 import { getFilterOptions } from '@/lib/vehicle-data';
 
 export const metadata: Metadata = {
-  title: 'Vehicles for Import | UMZE Autohaus',
-  description: 'Browse premium JDM, US, and UK import vehicles. Filter by brand, model, year, price, and more. Order custom imports, secure in-transit vehicles, or buy in-stock cars.',
+  title: 'Stock | UMZE Autohaus',
+  description: 'Browse in-stock vehicles, secure incoming arrivals, or order a custom import. Premium Japanese and European vehicles curated for Australian buyers.',
   openGraph: {
-    title: 'Vehicles for Import | UMZE Autohaus',
-    description: 'Browse premium JDM imports - verified, inspected, and sourced from trusted global auctions.',
+    title: 'Stock | UMZE Autohaus',
+    description: 'Browse BUY IT, SECURE IT, and ORDER IT vehicles from UMZE Autohaus.',
     type: 'website',
   },
 };
