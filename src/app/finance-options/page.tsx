@@ -47,7 +47,7 @@ export default function FinanceOptions() {
             </section>
 
             {/* Introduction with Image */}
-            <section className="py-24 bg-[#0F1614] relative overflow-hidden">
+            <section className="py-32 bg-[#0F1614] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-5">
                     <div className="absolute inset-0" style={{
                         backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(37,97,79,0.15) 1px, transparent 0)',
@@ -123,7 +123,7 @@ export default function FinanceOptions() {
             </section>
 
             {/* How It Works - Circular Steps */}
-            <section className="py-24 bg-carbon relative overflow-hidden">
+            <section className="py-32 bg-carbon relative overflow-hidden">
                 <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         className="text-center mb-20"
@@ -214,7 +214,7 @@ export default function FinanceOptions() {
             </section>
 
             {/* What Finance Covers - Box Grid */}
-            <section className="py-24 bg-[#0F1614] relative overflow-hidden">
+            <section className="py-32 bg-[#0F1614] relative overflow-hidden">
                 <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <motion.div
                         className="text-center mb-16"
@@ -295,7 +295,7 @@ export default function FinanceOptions() {
             </section>
 
             {/* Why Our Partners - Split Design */}
-            <section className="py-24 bg-carbon relative overflow-hidden">
+            <section className="py-32 bg-carbon relative overflow-hidden">
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid lg:grid-cols-2 gap-16 items-center">
                         {/* Left - Content */}

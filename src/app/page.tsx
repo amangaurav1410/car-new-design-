@@ -304,7 +304,7 @@ export default function Home() {
       </section>
 
       {/* 3️⃣ CORE PRINCIPLES */}
-      <section className="py-24 bg-[#0F1614]">
+      <section className="py-32 bg-[#0F1614]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             className="text-4xl md:text-5xl font-bold font-heading text-center mb-16 text-[#EAE2D6]"
@@ -369,7 +369,7 @@ export default function Home() {
       </section>
 
       {/* 4 PROCESS PREVIEW - Modern Flowing Timeline */}
-      <section className="py-24 bg-[#0F1614] relative overflow-hidden">
+      <section className="py-32 bg-[#0F1614] relative overflow-hidden">
         {/* Flowing Background Elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#25614F] rounded-full blur-3xl"></div>
@@ -552,7 +552,7 @@ export default function Home() {
       </section>
 
       {/* 5️⃣ WHY IMPORT FROM JAPAN (EDUCATIONAL) */}
-      <section className="relative py-24 overflow-hidden bg-[#0F1614]">
+      <section className="relative py-32 overflow-hidden bg-[#0F1614]">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
           <motion.div
             className="text-center mb-16"
@@ -860,7 +860,7 @@ export default function Home() {
       </section>
 
       {/* 7️⃣ CONTACT PROMPT */}
-      <section className="py-24 bg-[#0F1614]">
+      <section className="py-32 bg-[#0F1614]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             className="text-4xl md:text-5xl font-bold font-heading text-center mb-8 text-[#EAE2D6]"

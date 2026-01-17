@@ -2,9 +2,16 @@
 
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  // Don't show header on admin pages
+  if (pathname?.startsWith('/admin')) {
+    return null;
+  }
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -28,8 +35,8 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-[#0F1614]/95 backdrop-blur-md shadow-lg'
-        : 'bg-transparent'
+      ? 'bg-[#0F1614]/95 backdrop-blur-md shadow-lg'
+      : 'bg-transparent'
       }`}>
       <div className="w-full px-6 lg:px-8">
         <div className="flex justify-between items-center py-6">

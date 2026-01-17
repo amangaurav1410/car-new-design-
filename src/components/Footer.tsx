@@ -3,7 +3,16 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
+import { usePathname } from 'next/navigation';
+
 const Footer = () => {
+  const pathname = usePathname();
+
+  // Don't show footer on admin pages
+  if (pathname?.startsWith('/admin')) {
+    return null;
+  }
+
   return (
     <footer className="bg-[#0F1614] text-[#EAE2D6] relative overflow-hidden">
       {/* Top Decorative Border */}

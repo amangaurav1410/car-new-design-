@@ -148,7 +148,7 @@ export default function Resources() {
       </section>
 
       {/* Import Guides */}
-      <section id="guides" className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <section id="guides" className="py-32 bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             className="text-5xl font-bold font-heading text-center mb-16 text-white"

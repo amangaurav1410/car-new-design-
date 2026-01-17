@@ -34,7 +34,7 @@ export default function CommonMistakesPeopleMakeWhenImportingCarsFromJapan() {
       </section>
 
       {/* Blog Content */}
-      <section className="py-24 bg-[#0F1614]">
+      <section className="py-32 bg-[#0F1614]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-invert max-w-none">
             <motion.div

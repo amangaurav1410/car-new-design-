@@ -45,7 +45,7 @@ export default function ImportNow() {
       </section>
 
       {/* Import Request Form */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      <section className="py-32 bg-gradient-to-br from-gray-900 via-black to-gray-900">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-12 border border-gray-700 shadow-2xl"

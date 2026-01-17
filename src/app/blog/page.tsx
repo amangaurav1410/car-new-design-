@@ -96,7 +96,7 @@ export default function Blog() {
       </section>
 
       {/* Blog Posts */}
-      <section className="py-24 bg-[#0F1614]">
+      <section className="py-32 bg-[#0F1614]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="grid grid-cols-1 gap-12"
@@ -163,7 +163,7 @@ export default function Blog() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-[#004B3A] relative overflow-hidden">
+      <section className="py-32 bg-[#004B3A] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pattern-dots"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <motion.h2

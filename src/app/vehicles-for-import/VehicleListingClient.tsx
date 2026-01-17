@@ -135,7 +135,7 @@ export default function VehicleListingClient({ initialVehicles, filterOptions }:
             </section>
 
             {/* BUY IT Section */}
-            <section className="py-24 bg-[#0F1614] relative overflow-hidden">
+            <section className="py-32 bg-[#0F1614] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-5">
                     <div className="absolute inset-0" style={{
                         backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(34,197,94,0.15) 1px, transparent 0)',
@@ -181,7 +181,7 @@ export default function VehicleListingClient({ initialVehicles, filterOptions }:
             </section>
 
             {/* SECURE IT Section */}
-            <section className="py-24 bg-carbon relative overflow-hidden">
+            <section className="py-32 bg-carbon relative overflow-hidden">
                 <div className="absolute inset-0 opacity-5">
                     <div className="absolute inset-0" style={{
                         backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(245,158,11,0.15) 1px, transparent 0)',
@@ -227,7 +227,7 @@ export default function VehicleListingClient({ initialVehicles, filterOptions }:
             </section>
 
             {/* ORDER IT Section */}
-            <section className="py-24 bg-[#0F1614] relative overflow-hidden">
+            <section className="py-32 bg-[#0F1614] relative overflow-hidden">
                 <div className="absolute inset-0 opacity-5">
                     <div className="absolute inset-0" style={{
                         backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(100,116,139,0.15) 1px, transparent 0)',
