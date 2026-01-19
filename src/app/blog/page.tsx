@@ -198,7 +198,7 @@ export default function Blog() {
               Get in Touch
             </Link>
             <Link
-              href="/finance"
+              href="/calculator"
               className="border-2 border-[#66E5C4] text-[#66E5C4] px-10 py-4 rounded-xl font-bold text-lg hover:bg-[#66E5C4]/10 transition-all duration-300"
             >
               View Calculator

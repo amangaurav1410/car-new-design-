@@ -836,7 +836,7 @@ export default function Home() {
                       whileTap={{ scale: 0.95 }}
                     >
                       <Link
-                        href="/finance"
+                        href="/calculator"
                         className="block w-full text-center bg-[#25614F] text-[#EAE2D6] px-8 py-5 rounded-xl font-bold text-lg hover:bg-[#1e4f3f] border-2 border-[#25614F]/30 hover:border-[#25614F]/50 transition-all duration-300"
                       >
                         Use the calculator →
