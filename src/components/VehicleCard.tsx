@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Vehicle, LISTING_TYPE_LABELS, STATUS_LABELS } from '@/types/vehicle';
 
@@ -59,10 +60,12 @@ export default function VehicleCard({ vehicle }: VehicleCardProps) {
             {/* Image Container */}
             <div className="relative h-56 overflow-hidden">
                 {vehicle.images?.[0] ? (
-                    <img
+                    <Image
                         src={vehicle.images[0].url}
                         alt={`${vehicle.brand} ${vehicle.model}`}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        fill
+                        className="object-cover group-hover:scale-110 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                 ) : (
                     <div className="w-full h-full bg-gradient-to-br from-[#25614F]/20 to-[#0F1614] flex items-center justify-center">

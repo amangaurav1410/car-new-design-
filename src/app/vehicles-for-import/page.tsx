@@ -21,26 +21,34 @@ interface PageProps {
 export default async function VehiclesForImportPage({ searchParams }: PageProps) {
   const resolvedParams = await searchParams;
 
+  return (
+    <Suspense fallback={<LoadingState />}>
+      <VehicleListingData searchParams={resolvedParams} />
+    </Suspense>
+  );
+}
+
+async function VehicleListingData({ searchParams }: { searchParams: any }) {
   // Parse params for service
   const serviceParams = {
-    page: resolvedParams.page ? parseInt(resolvedParams.page as string) : 1,
+    page: searchParams.page ? parseInt(searchParams.page as string) : 1,
     limit: 12,
-    search: resolvedParams.search as string,
-    brand: resolvedParams.brand as string,
-    model: resolvedParams.model as string,
-    yearMin: resolvedParams.yearMin ? parseInt(resolvedParams.yearMin as string) : undefined,
-    yearMax: resolvedParams.yearMax ? parseInt(resolvedParams.yearMax as string) : undefined,
-    priceMin: resolvedParams.priceMin ? parseInt(resolvedParams.priceMin as string) : undefined,
-    priceMax: resolvedParams.priceMax ? parseInt(resolvedParams.priceMax as string) : undefined,
-    mileageMin: resolvedParams.mileageMin ? parseInt(resolvedParams.mileageMin as string) : undefined,
-    mileageMax: resolvedParams.mileageMax ? parseInt(resolvedParams.mileageMax as string) : undefined,
-    transmission: resolvedParams.transmission as string,
-    fuelType: resolvedParams.fuelType as string,
-    listingType: resolvedParams.listingType as string,
-    status: resolvedParams.status as string,
-    featured: resolvedParams.featured === 'true',
-    sortBy: resolvedParams.sortBy as string,
-    sortOrder: (resolvedParams.sortOrder as 'asc' | 'desc') || 'desc',
+    search: searchParams.search as string,
+    brand: searchParams.brand as string,
+    model: searchParams.model as string,
+    yearMin: searchParams.yearMin ? parseInt(searchParams.yearMin as string) : undefined,
+    yearMax: searchParams.yearMax ? parseInt(searchParams.yearMax as string) : undefined,
+    priceMin: searchParams.priceMin ? parseInt(searchParams.priceMin as string) : undefined,
+    priceMax: searchParams.priceMax ? parseInt(searchParams.priceMax as string) : undefined,
+    mileageMin: searchParams.mileageMin ? parseInt(searchParams.mileageMin as string) : undefined,
+    mileageMax: searchParams.mileageMax ? parseInt(searchParams.mileageMax as string) : undefined,
+    transmission: searchParams.transmission as string,
+    fuelType: searchParams.fuelType as string,
+    listingType: searchParams.listingType as string,
+    status: searchParams.status as string,
+    featured: searchParams.featured === 'true',
+    sortBy: searchParams.sortBy as string,
+    sortOrder: (searchParams.sortOrder as 'asc' | 'desc') || 'desc',
     includeAll: false
   };
 
@@ -50,12 +58,10 @@ export default async function VehiclesForImportPage({ searchParams }: PageProps)
   ]);
 
   return (
-    <Suspense fallback={<LoadingState />}>
-      <VehicleListingClient
-        initialVehicles={vehicles}
-        filterOptions={filters}
-      />
-    </Suspense>
+    <VehicleListingClient
+      initialVehicles={vehicles}
+      filterOptions={filters}
+    />
   );
 }
 

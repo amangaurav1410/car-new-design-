@@ -1,3 +1,4 @@
+import { unstable_cache } from 'next/cache';
 import connectDB from '@/lib/db';
 import Vehicle from '@/lib/models/Vehicle';
 import { Vehicle as VehicleType } from '@/types/vehicle';
@@ -32,7 +33,8 @@ export interface VehicleResponse {
     totalPages: number;
 }
 
-export async function getVehicles(options: GetVehiclesOptions): Promise<VehicleResponse> {
+// Internal function to actually fetch data from DB
+async function fetchVehicles(options: GetVehiclesOptions): Promise<VehicleResponse> {
     await connectDB();
 
     const {
@@ -145,6 +147,21 @@ export async function getVehicles(options: GetVehiclesOptions): Promise<VehicleR
         limit,
         totalPages: Math.ceil(total / limit)
     };
+}
+
+// Cached version of getVehicles
+export async function getVehicles(options: GetVehiclesOptions): Promise<VehicleResponse> {
+    // Generate a unique key based on options
+    const cacheKey = JSON.stringify(options);
+
+    // Use unstable_cache for better performance
+    const cachedFn = unstable_cache(
+        async (opts: GetVehiclesOptions) => fetchVehicles(opts),
+        ['vehicles-list'],
+        { revalidate: 3600, tags: ['vehicles'] }
+    );
+
+    return cachedFn(options);
 }
 
 export async function getVehicleBySlug(slug: string): Promise<VehicleType | null> {

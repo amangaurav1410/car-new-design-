@@ -1,3 +1,4 @@
+import { unstable_cache } from 'next/cache';
 import connectDB from './db';
 import Vehicle from './models/Vehicle';
 
@@ -11,7 +12,8 @@ export async function getVehicles(searchParams: Record<string, string | string[]
     } as any);
 }
 
-export async function getFilterOptions() {
+// Internal function to fetch data from DB
+async function fetchFilterOptions() {
     await connectDB();
 
     const [
@@ -79,3 +81,10 @@ export async function getFilterOptions() {
         yearRange: { min: yearStats[0]?.minYear || 1990, max: yearStats[0]?.maxYear || new Date().getFullYear() }
     };
 }
+
+// Cached version of filter options
+export const getFilterOptions = unstable_cache(
+    async () => fetchFilterOptions(),
+    ['filter-options'],
+    { revalidate: 3600, tags: ['vehicles', 'filters'] }
+);
