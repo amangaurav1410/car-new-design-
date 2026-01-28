@@ -1,12 +1,50 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 export default function ContactUs() {
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.6 }
+  };
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    vehicle: '',
+    budget: '',
+    message: ''
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    try {
+      const res = await fetch('/api/form-submissions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', phone: '', vehicle: '', budget: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setStatus('error');
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   return (
@@ -94,103 +132,143 @@ export default function ContactUs() {
                 </div>
               </div>
 
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              {status === 'success' ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="bg-[#1a2420] border-2 border-[#25614F] p-12 rounded-2xl text-center"
+                >
+                  <div className="w-20 h-20 bg-[#25614F] rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg className="w-10 h-10 text-[#EAE2D6]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-3xl font-bold text-[#EAE2D6] mb-4">Message Sent!</h3>
+                  <p className="text-[#BDB6AD] text-lg mb-8">Thank you for contacting UMZE Autohaus. We'll get back to you shortly.</p>
+                  <button
+                    onClick={() => setStatus('idle')}
+                    className="text-[#25614F] font-bold hover:underline"
+                  >
+                    Send another message
+                  </button>
+                </motion.div>
+              ) : (
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-[#EAE2D6] font-semibold mb-2">
+                        Full Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full bg-[#1a2420] border-2 border-[#25614F]/40 rounded-xl px-4 py-4 text-[#EAE2D6] placeholder-[#BDB6AD]/50 focus:border-[#25614F] focus:outline-none focus:ring-2 focus:ring-[#25614F]/30 transition-all"
+                        placeholder="Your full name"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="email" className="block text-[#EAE2D6] font-semibold mb-2">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full bg-[#1a2420] border-2 border-[#25614F]/40 rounded-xl px-4 py-4 text-[#EAE2D6] placeholder-[#BDB6AD]/50 focus:border-[#25614F] focus:outline-none focus:ring-2 focus:ring-[#25614F]/30 transition-all"
+                        placeholder="your.email@example.com"
+                        required
+                      />
+                    </div>
+                  </div>
+
                   <div>
-                    <label htmlFor="name" className="block text-[#EAE2D6] font-semibold mb-2">
-                      Full Name *
+                    <label htmlFor="phone" className="block text-[#EAE2D6] font-semibold mb-2">
+                      Phone *
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full bg-[#1a2420] border-2 border-[#25614F]/40 rounded-xl px-4 py-4 text-[#EAE2D6] placeholder-[#BDB6AD]/50 focus:border-[#25614F] focus:outline-none focus:ring-2 focus:ring-[#25614F]/30 transition-all"
+                      placeholder="+61 XXX XXX XXX"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="vehicle" className="block text-[#EAE2D6] font-semibold mb-2">
+                      Vehicle You Want
                     </label>
                     <input
                       type="text"
-                      id="name"
-                      name="name"
+                      id="vehicle"
+                      name="vehicle"
+                      value={formData.vehicle}
+                      onChange={handleChange}
                       className="w-full bg-[#1a2420] border-2 border-[#25614F]/40 rounded-xl px-4 py-4 text-[#EAE2D6] placeholder-[#BDB6AD]/50 focus:border-[#25614F] focus:outline-none focus:ring-2 focus:ring-[#25614F]/30 transition-all"
-                      placeholder="Your full name"
-                      required
+                      placeholder="e.g., Toyota Supra, Nissan Skyline GTR"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-[#EAE2D6] font-semibold mb-2">
-                      Email *
+                    <label htmlFor="budget" className="block text-[#EAE2D6] font-semibold mb-2">
+                      Budget Range
                     </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="w-full bg-[#1a2420] border-2 border-[#25614F]/40 rounded-xl px-4 py-4 text-[#EAE2D6] placeholder-[#BDB6AD]/50 focus:border-[#25614F] focus:outline-none focus:ring-2 focus:ring-[#25614F]/30 transition-all"
-                      placeholder="your.email@example.com"
-                      required
-                    />
+                    <select
+                      id="budget"
+                      name="budget"
+                      value={formData.budget}
+                      onChange={handleChange}
+                      className="w-full bg-[#1a2420] border-2 border-[#25614F]/40 rounded-xl px-4 py-4 text-[#EAE2D6] focus:border-[#25614F] focus:outline-none focus:ring-2 focus:ring-[#25614F]/30 transition-all"
+                    >
+                      <option value="">Select your budget range</option>
+                      <option value="0-20000">$0 - $20,000</option>
+                      <option value="20000-35000">$20,000 - $35,000</option>
+                      <option value="35000-50000">$35,000 - $50,000</option>
+                      <option value="50000+">$50,000+</option>
+                    </select>
                   </div>
-                </div>
 
-                <div>
-                  <label htmlFor="phone" className="block text-[#EAE2D6] font-semibold mb-2">
-                    Phone *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full bg-[#1a2420] border-2 border-[#25614F]/40 rounded-xl px-4 py-4 text-[#EAE2D6] placeholder-[#BDB6AD]/50 focus:border-[#25614F] focus:outline-none focus:ring-2 focus:ring-[#25614F]/30 transition-all"
-                    placeholder="+61 XXX XXX XXX"
-                    required
-                  />
-                </div>
+                  <div>
+                    <label htmlFor="message" className="block text-[#EAE2D6] font-semibold mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      rows={6}
+                      className="w-full bg-[#1a2420] border-2 border-[#25614F]/40 rounded-xl px-4 py-4 text-[#EAE2D6] placeholder-[#BDB6AD]/50 focus:border-[#25614F] focus:outline-none focus:ring-2 focus:ring-[#25614F]/30 transition-all resize-none"
+                      placeholder="Tell us about your import requirements, preferred models, timeline, etc..."
+                      required
+                    ></textarea>
+                  </div>
 
-                <div>
-                  <label htmlFor="vehicle" className="block text-[#EAE2D6] font-semibold mb-2">
-                    Vehicle You Want
-                  </label>
-                  <input
-                    type="text"
-                    id="vehicle"
-                    name="vehicle"
-                    className="w-full bg-[#1a2420] border-2 border-[#25614F]/40 rounded-xl px-4 py-4 text-[#EAE2D6] placeholder-[#BDB6AD]/50 focus:border-[#25614F] focus:outline-none focus:ring-2 focus:ring-[#25614F]/30 transition-all"
-                    placeholder="e.g., Toyota Supra, Nissan Skyline GTR"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="budget" className="block text-[#EAE2D6] font-semibold mb-2">
-                    Budget Range
-                  </label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    className="w-full bg-[#1a2420] border-2 border-[#25614F]/40 rounded-xl px-4 py-4 text-[#EAE2D6] focus:border-[#25614F] focus:outline-none focus:ring-2 focus:ring-[#25614F]/30 transition-all"
+                  <motion.button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="w-full bg-gradient-to-r from-[#25614F] to-[#1e4f3f] text-[#EAE2D6] px-8 py-5 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                    <option value="">Select your budget range</option>
-                    <option value="0-20000">$0 - $20,000</option>
-                    <option value="20000-35000">$20,000 - $35,000</option>
-                    <option value="35000-50000">$35,000 - $50,000</option>
-                    <option value="50000+">$50,000+</option>
-                  </select>
-                </div>
+                    {status === 'loading' ? 'Sending...' : 'Send Message'}
+                  </motion.button>
+                  {status === 'error' && (
+                    <p className="text-red-500 text-center mt-4">Something went wrong. Please try again.</p>
+                  )}
+                </form>
+              )}
 
-                <div>
-                  <label htmlFor="message" className="block text-[#EAE2D6] font-semibold mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    className="w-full bg-[#1a2420] border-2 border-[#25614F]/40 rounded-xl px-4 py-4 text-[#EAE2D6] placeholder-[#BDB6AD]/50 focus:border-[#25614F] focus:outline-none focus:ring-2 focus:ring-[#25614F]/30 transition-all resize-none"
-                    placeholder="Tell us about your import requirements, preferred models, timeline, etc..."
-                  ></textarea>
-                </div>
-
-                <motion.button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-[#25614F] to-[#1e4f3f] text-[#EAE2D6] px-8 py-5 rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Send Message
-                </motion.button>
-              </form>
             </motion.div>
 
             {/* Contact Details - 2 cols */}

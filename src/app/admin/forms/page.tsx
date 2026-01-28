@@ -7,10 +7,14 @@ interface FormSubmission {
   _id: string;
   name: string;
   email: string;
+  phone?: string;
+  vehicle?: string;
+  budget?: string;
   message: string;
   status: string;
   submittedAt: string;
 }
+
 
 export default function AdminForms() {
   const [submissions, setSubmissions] = useState<FormSubmission[]>([]);
@@ -74,11 +78,10 @@ export default function AdminForms() {
                   <td className="p-4 text-[#F7F7F7]">{sub.name}</td>
                   <td className="p-4 text-[#A9AAAE]">{sub.email}</td>
                   <td className="p-4">
-                    <span className={`px-2 py-1 rounded text-sm font-medium ${
-                      sub.status === 'unread' ? 'bg-red-600 text-white' :
+                    <span className={`px-2 py-1 rounded text-sm font-medium ${sub.status === 'unread' ? 'bg-red-600 text-white' :
                       sub.status === 'read' ? 'bg-yellow-600 text-white' :
-                      'bg-green-600 text-white'
-                    }`}>
+                        'bg-green-600 text-white'
+                      }`}>
                       {sub.status}
                     </span>
                   </td>
@@ -120,9 +123,25 @@ export default function AdminForms() {
                   <label className="block text-[#A9AAAE] text-sm font-medium mb-1">Name</label>
                   <p className="text-[#F7F7F7] bg-[#0A0A0A] p-3 rounded border border-[#A9AAAE]">{viewing.name}</p>
                 </div>
-                <div>
-                  <label className="block text-[#A9AAAE] text-sm font-medium mb-1">Email</label>
-                  <p className="text-[#F7F7F7] bg-[#0A0A0A] p-3 rounded border border-[#A9AAAE]">{viewing.email}</p>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-[#A9AAAE] text-sm font-medium mb-1">Email</label>
+                    <p className="text-[#F7F7F7] bg-[#0A0A0A] p-3 rounded border border-[#A9AAAE] truncate">{viewing.email}</p>
+                  </div>
+                  <div>
+                    <label className="block text-[#A9AAAE] text-sm font-medium mb-1">Phone</label>
+                    <p className="text-[#F7F7F7] bg-[#0A0A0A] p-3 rounded border border-[#A9AAAE]">{viewing.phone || 'N/A'}</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-[#A9AAAE] text-sm font-medium mb-1">Vehicle</label>
+                    <p className="text-[#F7F7F7] bg-[#0A0A0A] p-3 rounded border border-[#A9AAAE]">{viewing.vehicle || 'N/A'}</p>
+                  </div>
+                  <div>
+                    <label className="block text-[#A9AAAE] text-sm font-medium mb-1">Budget</label>
+                    <p className="text-[#F7F7F7] bg-[#0A0A0A] p-3 rounded border border-[#A9AAAE]">{viewing.budget || 'N/A'}</p>
+                  </div>
                 </div>
                 <div>
                   <label className="block text-[#A9AAAE] text-sm font-medium mb-1">Message</label>

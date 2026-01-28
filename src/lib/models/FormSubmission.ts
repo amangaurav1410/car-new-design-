@@ -3,6 +3,9 @@ import mongoose from 'mongoose';
 const FormSubmissionSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
+  phone: { type: String },
+  vehicle: { type: String },
+  budget: { type: String },
   message: { type: String, required: true },
   status: { type: String, enum: ['unread', 'read', 'responded'], default: 'unread' },
   submittedAt: { type: Date, default: Date.now },

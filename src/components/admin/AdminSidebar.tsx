@@ -17,9 +17,9 @@ export default function AdminSidebar() {
     const menuItems = [
         { icon: LayoutDashboard, label: 'Dashboard', href: '/admin' },
         { icon: Car, label: 'Stock', href: '/admin/vehicles' },
-        { icon: FileText, label: 'Blogs', href: '/admin/blogs' },
         { icon: Send, label: 'Enquiries', href: '/admin/forms' },
     ];
+
 
     return (
         <aside className="fixed left-0 top-0 h-full w-64 bg-gradient-to-b from-[#0F1614] to-[#080C0B] border-r border-[#25614F]/20 flex flex-col z-50 shadow-2xl">
